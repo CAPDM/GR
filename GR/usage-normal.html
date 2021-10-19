@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    clip-path: url(#clip);
+}
+.area {
+    fill: lightsteelblue;
+    stroke-width: 0;
+    clip-path: url(#clip);
+}
+</style>
+<!-- link href="../css/capdm_applet.css" rel="STYLESHEET" type="text/css" -->
+<title>The Normal Distribution</title>
+<script src="gr/grunit.js"></script>      // Graphics
+<script src="qm/gaussian.js"></script>    // Gaussian distribution
+<script src="qm/normal.js"></script>   // Normal function
+
+
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="100%" border="0">
+  <tr> 
+    <td valign="top"> 
+      <h1>CAPDM Tutorial Applets</h1>
+    </td>
+    <td valign="top"><img src="capdmlogo_small.gif"   align="right" width="129" height="40"></td>
+  </tr>
+</table>
+<h2>The Normal Distribution</h2>
+<h3>Functionality:</h3>
+This applet allows students to see how the Normal Distribution function changes 
+as Standard Deviation and Mean are changed. 95% confidence intervals are shown 
+and also shaded is the area conventionally tabulated in Normal Distribution tables.
+<h3></h3>
+<table border="0" cellspacing="15">
+  <tr align="center">
+    <td align="right">
+      <canvas id="qmNormal" width="400" height="300" style="border:1px solid #000000;"></canvas>
+      <script>
+	var qmn  = qmNormal("qmNormal");  // 
+console.log(qmn);
+	qmn.qmNormalDistribution();       // Calls the Gaussian Function
+      </script>
+      <br/>Mean:
+      <input id="qmMeanSlider" 
+	     onchange="qmn.setMean(value); qmn.setMeanSlider(this.id);" 
+	     value=20 min=10 max=30 step=1 type="number"> S.Dev:
+      <input id="qmSDSlider" 
+	     onchange="qmn.setSD(value); qmn.setSDSlider(this.id);" type="number" 
+	     value=2 min=0.2 max=3 step=.1>
+    </td>
+    <td align="left" valign="top">
+      <h4>Remote Control using JavaScript</h4>
+      <p>Both the Mean and Standard Deviation can be modified remotely from the applet. See the 'Runtime 
+        Applet API Calls' section below for details. </p>
+      <h5>Examples</h5>
+      <P><a href="javascript:qmn.setMean(19); qmn.setMeanSlider('qmMeanSlider');"
+	    onMouseOver="window.status='Set Mean=19'; return true;"
+	    onMouseOut="window.status=''; return true;" class="interaction">Set Mean&nbsp;=&nbsp;19</a></P>
+      <P><a href="javascript:qmn.setSD(1.5); qmn.setSDSlider('qmSDSlider');"
+	    onMouseOver="window.status='Qmn.Set S.Dev=1.5';return true;"
+	    onMouseOut="window.status=''; return true;" class="interaction">Set S.Dev&nbsp;=&nbsp;1.5</a></P>
+      <P><a href="javascript:qmn.setMean(21); qmn.setMeanSlider('qmMeanSlider'); 
+		  qmn.setSD(2.3); qmn.setSDSlider('qmSDSlider');"
+	    onMouseOver="window.status='Set Mean=21 and S.Dev=2.3';return true;"
+	    onMouseOut="window.status=''; return true;" class="interaction">Set Mean&nbsp;=&nbsp;21
+          and S.Dev&nbsp;=&nbsp;2.3</a></P>
+      <p><a href="javascript:qmn.setMean(20); qmn.setMeanSlider('qmMeanSlider'); 
+		  qmn.setSD(2.0); qmn.setSDSlider('qmSDSlider');"
+	    onMouseOver="window.status='Reset Graph';return true;"
+	    onMouseOut="window.status=''; return true;" class="interaction">
+	  Reset back to mean of 20 and S.Dev of 2</a></P>
+      <p><a href="javascript:qmn.showAbout()"
+	    onMouseOver="window.status='Show version dialog';return true;"
+	    onMouseOut="window.status=''; return true;" class="interaction">Show 'About' dialog</a> </p>
+    </td>
+  </tr>
+</table>
+
+<h2>Runtime Applet API Calls</h2>
+<p>This applet can be called into using Javascript while running. Although 
+  JavaScript can call the Applet directly, some convenient JavaScript functions 
+  have been created which deal with the details of the communication. The following 
+  table lists the call Names which can be made, and gives examples of their use 
+  and results.</p>
+<table border="1" vspace="2" cellpadding="3" cellspacing="0"
+ bordercolor="#188C21">
+  <tr> 
+    <td><b>API Call Name</b></td>
+    <td><b>Parameters</b></td>
+    <td><b>Use and Result</b></td>
+  </tr>
+  <tr> 
+    <td>SetMean</td>
+    <td>the new mean value</td>
+    <td><code>javascript:qmn.setMean(20); javascript:qmn.setMeanSlider('qmMeanSlider');</code> Changes the mean value</td>
+  </tr>
+  <tr> 
+    <td>SetStandev</td>
+    <td>the new standard deviation</td>
+    <td><code>javascript:qmn.setSD(2); javascript:qmn.setSDSlider('qmSDSlider');</code> Changes the standev value</td>
+  </tr>
+  <tr> 
+    <td>showAbout</td>
+    <td>none</td>
+    <td> <code>javascript:qmn.showAbout();</code> Shows the version dialog box of 
+      this applet. </td>
+  </tr>
+</table>
+<br>
+<hr align="center" width="50%" color="#009999">
+</body>
+</html>

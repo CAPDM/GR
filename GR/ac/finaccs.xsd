@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- The allowed elements from the content model -->
+  <xs:element name="accountingequation">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="title"/>
+        <xs:element ref="keywords" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="transactions" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <!-- Attributes -->
+  <xs:attribute name="id" type="xs:ID"/>
+  <xs:attribute name="catid" type="xs:IDREF"/>
+  <xs:attribute name="linkend" type="xs:IDREF"/>
+  <xs:attribute name="order" type="xs:integer"/>
+  <xs:attribute name="amount" type="xs:integer"/>
+
+  <xs:attributeGroup name="act_common">
+    <xs:attribute ref="linkend" use="required"/>
+    <xs:attribute ref="order" use="required"/>
+    <xs:attribute ref="amount" use="required"/>
+  </xs:attributeGroup>
+
+  <!-- Element Groups & types-->
+  <xs:element name="preamble" type="xs:string"/>
+  <xs:element name="footnote" type="xs:string"/>
+  <xs:element name="statement" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+
+  <!-- Complex, attribute only -->
+  <xs:element name="keywords">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="category"/>
+      </xs:sequence>
+      <xs:attribute ref="id"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Simple types, content only -->
+  <xs:element name="name" type="xs:string"> </xs:element>
+
+  <!-- Complex, with complex content -->
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="category2" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="category2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="category3" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="category3">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="name"/>
+      </xs:sequence>
+      <xs:attribute ref="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="transactions">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="preamble"/>
+        <xs:element ref="transaction" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="statement"/>
+        <xs:element ref="actions"/>
+        <xs:element ref="footnote" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute ref="order"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="actions">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="equity"/>
+          <xs:element ref="asset"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="asset">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="preamble"/>
+        <xs:element ref="action" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute use="required" ref="linkend"/>
+      <xs:attribute use="required" ref="order"/>
+      <xs:attribute use="required" ref="amount"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="equity">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="preamble"/>
+        <xs:element ref="action" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute use="required" ref="linkend"/>
+      <xs:attribute use="required" ref="order"/>
+      <xs:attribute use="required" ref="amount"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="action">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="category2">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="category3">
+                <xs:complexType>
+                  <xs:attribute ref="catid" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="catid" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,661 @@
+<accountingequation>
+  <title>
+    Raith Enterprises
+  </title>
+  <keywords>
+    <keyword>
+      <category id="AE-FA">
+	<name>Fixed Assets</name>
+	<structure>
+	  [
+            { "name" : "Land &amp; Buildings", "instance" : [ "Land/Plots", "Buildings", "Laboratories", "Portakabins", "Marquees", "Country Retreat", "Chairman's Apartment" ] },
+            { "name" : "Plant &amp; Equipment", "instance":[ "Productive Equipment", "Refridgeration", "Lab Equipment", "Computers", "Generators" ] },
+            { "name" : "Motor Vehicles", "instance":[ "Cars", "Vans &amp; Lorries", "Industrial Tippers", "Forklifts", "Cranes" ] }, 
+            { "name" : "Leased Assets"},
+            { "name" : "Other Assets"}
+          ]
+	</structure>
+      </category>
+      <category id="AE-SI">
+	<name>Stock/Inventory</name>
+	<structure>
+	  [
+            { "name" : "Raw Materials"},
+            { "name" : "Work in Process"},
+            { "name" : "Finished Goods"}
+          ]
+	</structure>      </category>
+      <category id="AE-OE">
+	<name>Owner's Equity</name>
+	<structure>
+	  [
+            { "name" : "Sales"},
+            { "name" : "COGS"},
+            { "name" : "Expenses", "instance":[ "Electricity", "Heat &amp; Light", "Depreciation", "Phones", "Lubrication", "Stationery", "Small Items", "Training", "Car Maintenance", "Building Maintenance" ] },
+            { "name" : "Taxes Paid"},
+            { "name" : "Dividend Payment"},
+            { "name" : "Extraordinary Investments"},
+            { "name" : "Capital Introduced"},
+            { "name" : "Revaluation Reserve"},
+            { "name" : "Drawings"}
+          ]
+	</structure>      </category>
+      <category  id="AE-DB">
+	<name>Debtors</name>
+      </category>
+      <category id="AE-IA">
+	<name>Intangible Assets</name>
+	<structure>
+	  [
+            { "name" : "R &amp; D"},
+            { "name" : "Brands"},
+            { "name" : "Goodwill"},
+            { "name" : "Brand Creation"}
+          ]
+	</structure>      </category>
+      <category id="AE-CA">
+	<name>Cash</name>
+	<structure>
+	  [
+            { "name" : "Operational", "instance" : [ "Sale of Product", "Sale of Asset", "Inventory Purchase", "Expenses", "Asset Purchase", "Pay Creditors", "Receive Debts" ] },
+            { "name" : "Non-Operational", "instance":[ "From Owners", "From Creditors", "To Owners", "To Creditors" ] }
+          ]
+	</structure>      </category>
+      <category id="AE-SI">
+	<name>Subsidiary Investments</name>
+      </category>
+      <category id="AE-AC">
+	<name>Associate Company</name>
+      </category>
+      <category id="AE-CR">
+	<name>Creditors</name>
+      </category>
+      <category id="AE-LTL">
+	<name>Long Term Loan</name>
+      </category>
+    </keyword>
+  </keywords>
+
+  <transactions>
+    <preamble>
+      The following question is about starting up a company.  Work through the incremental changes in the Accounting Equation for all actions to produce the Financial Statements.
+    </preamble>
+    <transaction order="1">
+      <statement>
+	Robert Raith commences his Raith Enterprises business with £40,000 from his own savings along with £10,000 in cash from his father.  His father is not looking for any interest or early repayment of this loan.
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="40000">
+	  <preamble>
+	    Raith injects 40,000 of his own savings into the new company.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Capital Introduced"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="40000">
+	  <preamble>
+	    Raith's equity injection is balanced by a cash asset.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Non-Operational", "instance": "From Owners"} ]	      
+	  </structure>
+	</asset>
+
+	<equity linkend="AE-LTL" order="1" amount="10000">
+	  <preamble>
+	    This amount is topped up by his father who offers Fred a long term loan
+	  </preamble>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="10000">
+	  <preamble>
+	    which is represented by a cash asset.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Non-Operational", "instance": "From Creditors"} ]	      
+	  </structure>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+      The following assets are purchased: Plant &amp; Equipment to the value of £5,000 paid for in cash; a Factory &amp; Warehouse costing £25,000 also paid for in cash; essential Raw Materials to the value of £ 8,000 but paid half in cash, and half by credit.
+      </statement>
+
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="25000">
+	  <preamble>
+	    Raith sets the company up for production by buying factory premises
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Land &amp; Buildings", "instance": "Buildings"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-FA" order="2" amount="5000">
+	  <preamble>
+	    ... by buying Plant and Equipment
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Plant &amp; Equipment", "instance": "Productive Equipment"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="8000">
+	  <preamble>
+	    ... and by buying Inventory.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Raw Materials"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="-30000">
+	  <preamble>
+	    The fixed assets are balanced by a cash outflow, aggregated to give:
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance": "Purchase of Asset"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="5" amount="-4000">
+	  <preamble>
+	    The raw materials are part paid in cash:
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance": "Inventory Purchase"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-CR" order="6" amount="-4000">
+	  <preamble>
+	    and partly by Creditors.  Now he can begin to work!
+	  </preamble>
+	  <structure/>
+	</equity>
+
+      </actions>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+      Before the equipment can function properly it requires post-installation lubrication costing £200.  Raith pays for this in cash. £4,000 worth of raw materials are then processed into finished goods through the equipment, at a cost of £400. 
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="200">
+	  <preamble>
+	    Raith's post installation lubrication of the productive equipment has been   capitalised, since the equipment would not work without this servicing.     The amount of this is therefore added to the original purchase price:
+	  </preamble>
+	  <structure>
+	    [ {"name" : "Plant &amp; Equipment", "instance" : "Productive Equipment" } ]
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-200">
+	  <preamble>
+	    This is paid from cash. Any subsequent maintenance on this equipment will be expensed, i.e. paid for out of Owners' Equity.
+	  </preamble>
+	  <structure>
+	    [ {"name" : "Operational", "instance" : "Purchase of Asset" } ]
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="-4000">
+	  <preamble>
+	    The Raw Materials can now be transformed into Finished Goods.  First reduce the inventory.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Raw Materials"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="4" amount="4400">
+	  <preamble>
+	    Raith now has some stock of finished goods - inventory.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished goods" } ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="5" amount="-400">
+	  <preamble>
+	    This change in inventory is accomplished at a labour cost.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Non-Operational", "instance" : "Expenses"} ]	      
+	  </structure>
+	</asset>
+
+        <footnote>
+	  There are no changes in this action to EQUITY or LIABILITIES.
+	</footnote>
+      </actions>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+	Raith pays his creditors in full and sells half the finished goods (recorded at cost of £2,200) for £4,000 credit.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-4000">
+	  <preamble>
+	    Raith pays his creditors off in full.  This reduces his cash ...
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Pay Creditors"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="-4000">
+	  <preamble>
+	    ... and clears the creditors.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Creditors"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-DB" order="3" amount="4000">
+	  <preamble>
+	    The sale of half the finished goods on credit creates a debtor.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Debtors"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="4" amount="-2200">
+	  <preamble>
+	    ... and reduces finished goods inventory.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished Goods"} ]
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="4000">
+	  <preamble>
+	    But Sales are recorded!
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Sales"} ]	      
+	  </structure>
+	</equity>
+	<equity linkend="AE-OE" order="6" amount="-2200">
+	  <preamble>
+	    This is not the profit on the sales since there are costs attached.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "COGS"} ]	      
+	  </structure>
+	</equity>
+
+        <footnote>
+	  The profit is the difference between Sales and the Cost of Goods Sold.
+	</footnote>
+      </actions>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	Raith buys a second-hand delivery van for £3,000 on credit and a typewriter for his secretary for £200 cash.
+      </statement>
+	<asset linkend="AE-FA" order="1" amount="3000">
+	  <preamble>
+            Raith buys more assets.  First, a delivery van.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Motor Vehicles", "instance" : "Vans/Lorries"} ]
+	  </structure>
+	</asset>
+	<asset linkend="AE-FA" order="2" amount="200">
+	  <preamble>
+            ... and a typewriter
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Other Assets"} ]
+	  </structure>
+	</asset>
+	<equity linkend="AE-CR" order="3" amount="3000">
+	  <preamble>
+	    The van is paid for by creditors.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Creditors"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="-200">
+	  <preamble>
+	    ... while the typewriter is purchased from cash.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Purchase of Asset"} ]     
+	  </structure>
+	</asset>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	Raith sells the remainder of the finished goods (recorded at a cost of £2,200) for £3,900 cash, and receives payment of £3,900 from his debtors.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="3900">
+	  <preamble>
+	    Raith's cash is boosted by most of his debts being repaid.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Receive Debts"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-DB" order="2" amount="-3900">
+	  <preamble>
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Debtors"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="-2200">
+	  <preamble>
+	    Selling the remainder of his finished goods is similar to action 4.  Stocks go down ...
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished Goods"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="3900">
+	  <preamble>
+	    ... and cash comes in.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operation", "instance" : "Sale of Product"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="3900">
+	  <preamble>
+	    And a profit is recorded.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Sales"} ]	      
+	  </structure>
+	</equity>
+	<equity linkend="AE-OE" order="6" amount="-2200">
+	  <preamble>
+	    Cost of sales.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "COGS"} ]	      
+	  </structure>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="7">
+      <statement>
+	The delivery van breaks down and requires £100 of repairs which Raith pays in cash.  He buys further raw materials for £6,000 cash and processes the remainder of his first batch of raw materials (which had cost £4,000) at a cash cost for labour of £300.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-100">
+	  <preamble>
+	    The delivery van repairs is a cash expense which reduces owners equity.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Expenses"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-100">
+	  <preamble>
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Expenses", "instance" : "Car Maintenance"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-SI" order="3" amount="6000">
+	  <preamble>
+	    The Raw Materials purchase is straightforward cash for inventory.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Raw Materials"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="-6000">
+	  <preamble>
+	   </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Inventory Purchase"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="5" amount="-4000">
+	  <preamble>
+	    The processing of existing materials requires three changes. First raw materials go down.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Raw Materials"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="6" amount="4300">
+	  <preamble>
+	    Second, finished goods are produced with a greater value.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished Goods"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="7" amount="-300">
+	  <preamble>
+	    Finally, there has been a cost.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Expenses"} ]	      
+	  </structure>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="8">
+      <statement>
+	At Christmas, Raith buys his wife a food mixer costing £100, and his secretary a fur jacket costing £1,200.  He pays for both items using his credit card.
+      </statement>
+      <actions>
+	<preamble>
+	  If you are reading this you probably have a lot to learn! The actions of buying a food mixer and a fur coat are total red-herrings (i.e. of no consequence to the problem) and are rather obvious ones at that.
+	</preamble>
+      </actions>
+    </transaction>
+
+    <transaction order="9">
+      <statement>
+	He sells his second batch of finished goods (which are recorded at a cost of £4,300) for £6,000, receiving half the money in cash and giving credit for the other half.  He pays off his creditors.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-3000">
+	  <preamble>
+	    First pay off the creditors.  Cash goes out ...
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Pay Creditors"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="-3000">
+	  <preamble>
+	    ... and creditors disappear.
+	  </preamble>
+	  <structure/>
+	</equity>
+	<asset linkend="AE-SI" order="3" amount="-4300">
+	  <preamble>
+	    The sales of the finished goods inventory wipes stocks out.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished Goods"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="3000">
+	  <preamble>
+	    Some cash come in.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Sale of Product"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-DB" order="5" amount="3000">
+	  <preamble>
+	    And the rest is owed, creating a debtor.
+	  </preamble>
+	  <structure/>
+	</asset>
+	<equity linkend="AE-OE" order="6" amount="6000">
+	  <preamble>
+	    The Sales result in a small profit, being the difference between the value  of the sales and the cost of sales.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Sales"} ]	      
+	  </structure>
+	</equity>
+	<equity linkend="AE-OE" order="7" amount="-4300">
+	  <preamble>
+	    The cost of sales.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "COGS"} ]	      
+	  </structure>
+	</equity>
+	
+      </actions>
+    </transaction>
+
+    <transaction order="10">
+      <statement>
+	Raith pays £400 cash for advertising and £200 cash for audit fees; he also has all of his raw materials (cost £6,000) processed, his labour force incurring £1,000 wages in so doing.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-1600">
+	  <preamble>
+	    There are three cash operating expenses, namely the audit fee, the advertising bill and the wages.  Aggregating these together:
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Expenses"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-200">
+	  <preamble>
+	    The audit fee and the advertising bill is money lost to the company, so reducing the equity.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Expenses", "instance" : "Audit"} ]	      
+	  </structure>
+	</equity>
+	<equity linkend="AE-OE" order="3" amount="-400">
+	  <preamble>
+	    Advertising is an expense.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Expenses", "instance" : "Advertising"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-SI" order="4" amount="-6000">
+	  <preamble>
+	    The transformation of raw materials to finished goods inventory reduces raw materials:
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Raw Materials"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-SI" order="5" amount="7000">
+	  <preamble>
+	    ... but produces finished goods.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Finished Goods"} ]	      
+	  </structure>
+	</asset>
+	
+      </actions>
+    </transaction>
+
+    <transaction order="11">
+      <statement>
+	His auditors advise him that he should write off the debt of £100 which has been outstanding since transaction 4; in their opinion this debt is now irrecoverable.  They also recommend that he provides for depreciation on plant and equipment at a rate of 10%, and on motor vehicles at 25%.
+      </statement>
+      <actions>
+	<asset linkend="AE-DB" order="1" amount="-100">
+	  <preamble>
+	    The writing off of the bad debt reduces the outstanding Debtors ...
+	  </preamble>
+	  <structure/>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-100">
+	  <preamble>
+	    ... but the amount is lost to equity.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Expenses", "instance" : "Bad Debt"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-FA" order="3" amount="-540">
+	  <preamble>
+	    The depreciation reduces the asset value of the plant &amp; equipment and of the motor vehicles.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Plant &amp; Equipment", "instance" : "Productive equipment"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-FA" order="4" amount="-750">
+	  <preamble>
+	    Depreciation of the motor vehicles.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Motor Vehicles", "instance" : "Vans/lorries"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="-1290">
+	  <preamble>
+	    This is also lost to equity.  Aggregating we get:
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Expenses", "instance" : "Depreciation"} ]	      
+	  </structure>
+	</equity>
+
+      </actions>
+    </transaction>
+
+    <transaction order="12">
+      <statement>
+	Raith considers that one fifth of his factory and warehouse space is excessive for his needs; he sells that part for £7,000 cash. He withdraws £2,000 in cash for personal needs.
+      </statement>
+    </transaction>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="-5000">
+	  <preamble>
+	    One-fifth of Raith's factory is 5000 of asset ...
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Land &amp; Buildings", "instance" : "Buildings"} ]	      
+	  </structure>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="7000">
+	  <preamble>
+	    ... sold for 7000 cash.
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Operational", "instance" : "Sale of Asset" ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="2000">
+	  <preamble>
+	    The difference has to be accounted for, in this case an Extraordinary Profit to appear in the P&amp;L statemen
+	  </preamble>
+	  <structure>
+	    [ { "name" : "Extraordinary Item"} ]	      
+	  </structure>
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="-2000">
+	  <preamble>
+	    Finally Raith allows himself some money from the business.
+	  </preamble>
+	  <structure>
+	    [ { "name" :x "Non-Operational", "instance" : "To owners"} ]	      
+	  </structure>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="-2000">
+	  <preamble>
+	  </preamble>
+	  <structure>
+	    [ { "name" x: "Drawings"} ]	      
+	  </structure>
+	</equity>
+
+      </actions>
+  </transactions>
+</accountingequation>

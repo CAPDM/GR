@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>Whiz Diaries Ltd.</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  IDEALLY MAKE NO CHANGES  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-SA"><name>Sales &amp; Admin</name></category3>
+	<category3 id="AE-OE-EX-MC"><name>Manufacturing Costs</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-FC"><name>Finance Charges</name></category3>
+	<category3 id="AE-OE-EX-AM"><name>Amortisation</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-OC">
+	<name>Organisational Costs</name>
+      </category2>      
+      <category2 id="AE-IA-EC">
+	<name>Experimental Costs</name>
+      </category2>      
+      <category2 id="AE-IA-PT">
+	<name>Patents</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+	<category3 id="AE-CA-OP-BL"><name>Bank Loan</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+	<category3 id="AE-CA-NOP-OB"><name>Opening Balance</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Loans</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      Whiz Diaries Ltd. makes diaries to order. This question introduces concepts such as Net Book Value and amorisation. Whiz has a Share Capital of £80,000 balanced by: Cash of £9.840; an Inventory of Raw Materials to the value of £960; Plant and Equipment worth £17,600; Organisational Costs of £2,320; Experimental Costs of £1,280; and a Patent for which it paid £48,000.  Start by preparing the opening B/S, with Cash as an Opening Balance (note: there are seven actions in total).
+    </preamble>
+    <transaction order="1">
+      <statement>
+	This is a fairly big transaction - to plug in the company's opening balance sheet as the starting point.  As stated, there are no fewer than seven actions to identify here.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="9840">
+	  <preamble>
+	    The Cash item is treated as an Opening Balance
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP"> <!-- Opening Balance -->
+	      <category3 catid="AE-CA-NOP-OB"/>
+	    </category2>
+	  </action>
+	</asset>
+
+	<asset linkend="AE-SI" order="2" amount="960">
+	  <preamble>
+	    The Raw Materials are assets:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="3" amount="17600">
+	  <preamble>
+	    ... as are the Plant and Equipment which can be assumed to be Productive Equipment.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+
+	<asset linkend="AE-IA" order="4" amount="2320">
+	  <preamble>
+	    The rest of the Assets are Intangible Assets, defined as: (i) Organisational Costs
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-OC"/>  <!-- Organisational Costs -->
+	  </action>
+	</asset>
+	<asset linkend="AE-IA" order="5" amount="1280">
+	  <preamble>
+	    ... (ii) Experimental Costs
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-EC"/>  <!-- Experimental Costs -->
+	  </action>
+	</asset>
+	<asset linkend="AE-IA" order="6" amount="48000">
+	  <preamble>
+	    ... (iii) Patent
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-PT"/>  <!-- Patent -->
+	  </action>
+	</asset>
+
+	<equity linkend="AE-OE" order="7" amount="80000">
+	  <preamble>
+	    These ar balanced by the Ower's Equity
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/>  <!-- Capital Introduced -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+	Expected purchases of raw materials and supplies during the course of the operating year, all paid in cash by the end of the year 36,800.  The rest of the transactions will be treated them in strict sequence, as written in the question, though in theory there is actually no implied ordering.  
+      </statement>
+
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="36800">
+	  <preamble>
+	    The expected purchases of raw materials and supplies during the course of the operating year, all to be paid in cash by the end of the year, is 36,800.  There are two elements to this transaction. During the year raw materials and supplies to the value of £36,800 are bought ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-36800">
+	  <preamble>
+	    ... and paid for by cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"/>  <!-- Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+	Expected wages and other cash expenses and manufacturing costs for the operating year £33,600 of manufacturing costs plus £6,400 for selling and admin. expenses, a total of £40,000.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-40000">
+	  <preamble>
+	    £33,600 (manufacturing costs) plus £6,400 (selling and admin. expenses)
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Cash Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-33600">
+	  <preamble>
+	    There are separate calls on equity however.  First, a manufacturing cost ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-MC"></category3>  <!-- Manufacturing Costs -->
+	    </category2>
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="3" amount="-6400">
+	  <preamble>
+	    ... and adminstrative expenses.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">  
+	      <category3 catid="AE-OE-EX-SA"/>  <!-- Sales and Admin -->
+	    </category2>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+	The expected inventory of raw materials at the close of the year, at cost, will be £5,760. (Note: this requires a bit of arithmetic to be done on the inventory!)
+      </statement>
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="-32000">
+	  <preamble>
+	    Opening levels of raw materials were £960. Since then £36,800 have been purchased giving a total of £37,960.  If the expected inventory at the end of the year is £5,760 then £32,000 must be used up. This is recorded as:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-32000">
+	  <preamble>
+	    This is a Cost of Sales, so is balanced by a reduction in Owner's Equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>
+	  </action>
+	</equity>
+      </actions>
+
+      <footnote>
+	The necessary calculation of inventory was partially hidden.  Don't be fooled!
+      </footnote>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	No inventory of unsold diaries at the end of the year. All diaries are to be manufactured on the basis of firm orders received. None are to be produced for inventory.
+      </statement>
+      <actions>
+      </actions>
+
+      <footnote>
+	There is no inventory of unsold diaries at the end of the year. All diaries are to be manufactured on the basis of firm orders received. None are to be produced for inventory. This is a null action and merely states that there is no finished goods inventory to be considered.
+      </footnote>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	Sales have the welcome effect of bumping up the cash assets
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="102400">
+	  <preamble>
+	    Products have been sold.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SP"/>  <!-- Sales of Product -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="102400">
+	  <preamble>
+	    And it also increases Owner's Equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="7">
+      <statement>
+	New plant and Equipment to be purchased for cash, £4,000.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-4000">
+	  <preamble>
+	    Buying new plant &amp; equipment, assumed to be productive equipment, costs money, in this case cash
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"></category3>  <!-- Operational, Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="3" amount="4000">
+	  <preamble>
+	    This is recorded as an increase in fixed assets.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">  
+	      <category3 catid="AE-FA-PE-PEQ"/><!-- Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="8">
+      <statement>
+	Anticipated bank borrowing during the year, all of which is to be repaid by the end of the year £6,400. Interest on loans £880.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="6400">
+	  <preamble>
+	    This is the cash increase when the loan is taken out.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">  
+	      <category3 catid="AE-CA-OP-BL"/>  <!-- Bank Loan -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="2" amount="6400">
+	  <preamble>
+	    This loan is short term - to be paid back this year.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-CA" order="3" amount="-880">
+	  <preamble>
+	    Interest has to be paid on the loan.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">  
+	      <category3 catid="AE-CA-OP-EXP"/>   <!-- Expense - Interest Payment -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="4" amount="-880">
+	  <preamble>
+	    Interest reduces the Owner's Equity.  The downside of a loan.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-FC"/>  <!-- Finance Charges -->	      
+	    </category2>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-CA" order="5" amount="-6400">
+	  <preamble>
+	    Finally the loan is repayed.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">  
+	      <category3 catid="AE-CA-OP-BL"/><!-- Bank Loan -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="6" amount="-6400">
+	  <preamble>
+	    The loan also reduces Owner's Equity.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+
+       </actions>
+
+      <footnote>
+	The bank loans over the year result in many entries, all of which are included for completeness.
+      </footnote>
+    </transaction>
+
+    <transaction order="9">
+      <statement>
+	Estimated depreciation on plant and equipment: 25% of NBV.  As a help, the book value of the plant &amp; equipment is currently £17,600 + £4,000 = £21,600.  
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="-5400">
+	  <preamble>
+	    Depreciation @ 25% of this book value is therefore £5,400. This reduces the value of the Fixed Assets
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-5400">
+	  <preamble>
+	    ... and Owner's Equity by the same amount.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-DP"/>  
+	    </category2>
+	  </action>	  
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="10">
+      <statement>
+	All organisational and experimental costs, capitalised at time of incorporation, are to be charged against first year profits.
+      </statement>
+      <actions>
+	<asset linkend="AE-IA" order="1" amount="-2320">
+	  <preamble>
+	    The intangible assets, capitalised at time of incorporation, are now written off against profit. The first is the Organisational Costs.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-OC"/>
+	  </action>
+	</asset>
+	<asset linkend="AE-IA" order="2" amount="-1280">
+	  <preamble>
+	    The second is the Experimental Costs.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-EC"/>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="-3600">
+	  <preamble>
+	    Again, Owner's Equity takes a hit as these are written off against this.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AM"></category3>  <!-- Expenses, Amortisation -->
+	    </category2>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="11">
+      <statement>
+	The Patent for the diary is to be amortised over 5 years.
+      </statement>
+      <actions>
+	<asset linkend="AE-IA" order="1" amount="-9600">
+	  <preamble>
+	    We are concerned here with the transactions planned over the first 12 months. Since the patent is amortized over 5 years 1/5 of its value is written off in this period.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-IA-PT"/>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-9600">
+	  <preamble>
+	    Balanced by:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AM"/>  <!-- Expenses, Amortisation -->
+	    </category2>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="12">
+      <statement>
+	The expected tax payable on profits at 40% is to be paid in cash next year.
+      </statement>
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="-4368">
+	  <preamble>
+	    From the P&amp;L the expected pre-tax profit is to be £10,920. Tax must unfortunately be paid on this amount at 40%.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-TP">
+	      <category3 catid="AE-FA-LB-BU"></category3>  <!-- Taxes Paid -->	      
+	    </category2>
+	  </action>
+	</equity>
+	<equity linkend="AE-CR" order="2" amount="-4368">
+	  <preamble>
+	    This is payable next year hence it is not paid directly out of cash; until such time as this is true Whiz has a Creditor.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="13">
+      <statement>
+	Dividends of £4,000 are paid, in cash, to the shareholders.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-4000">
+	  <preamble>
+	    Finally, there is some reward for the owners!  This reduces the amount of Cash in the business.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-TO"></category3>  <!-- To Owners -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-4000">
+	  <preamble>
+	    The owners trade cash for equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-DP"/>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+  </transactions>
+</accountingequation>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title><!-- MY QUESTION TITLE --></title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  
+       CATEGORY3 ITEMS CAN BE CHANGED, BUT KEEP THE NUMBERS DOWN!  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-EL"><name>Electricity</name></category3>
+	<category3 id="AE-OE-EX-HL"><name>Heat &amp; Light</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-LUB"><name>Lubrication</name></category3>
+	<category3 id="AE-OE-EX-ST"><name>Stationery</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Long Term Loan</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      <!-- Some preamble (text) -->
+    </preamble>
+    <transaction order="1">
+      <statement>
+	<!-- Some statement (text) -->
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="40000">
+	  <preamble>
+	    <!-- Some preamble (text) -->
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/> <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="40000">
+	  <preamble>
+	    <!-- Some preamble (text) -->
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"></category3>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+	<!-- ... -->
+
+      </actions>
+      <footnote>
+	<!-- Optional Footnote??? -->
+      </footnote>
+    </transaction>
+    <!-- ... -->
+  </transactions>
+</accountingequation>

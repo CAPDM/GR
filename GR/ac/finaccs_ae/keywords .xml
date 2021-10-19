@@ -1,0 +1,71 @@
+  <keywords>
+      <category id="AE-FA">
+	<name>Fixed Assets</name>
+	<structure>
+	  [
+            { "name" : "Land &amp; Buildings", "instance" : [ "Land/Plots", "Buildings", "Laboratories", "Portakabins", "Marquees", "Country Retreat", "Chairman's Apartment" ] },
+            { "name" : "Plant &amp; Equipment", "instance":[ "Productive Equipment", "Refridgeration", "Lab Equipment", "Computers", "Generators" ] },
+            { "name" : "Motor Vehicles", "instance":[ "Cars", "Vans &amp; Lorries", "Industrial Tippers", "Forklifts", "Cranes" ] }, 
+            { "name" : "Leased Assets"},
+            { "name" : "Other Assets"}
+          ]
+	</structure>
+      </category>
+      <category id="AE-SI">
+	<name>Stock/Inventory</name>
+	<structure>
+	  [
+            { "name" : "Raw Materials"},
+            { "name" : "Work in Process"},
+            { "name" : "Finished Goods"}
+          ]
+	</structure>      </category>
+      <category id="AE-OE">
+	<name>Owner's Equity</name>
+	<structure>
+	  [
+            { "name" : "Sales"},
+            { "name" : "COGS"},
+            { "name" : "Expenses", "instance":[ "Electricity", "Heat &amp; Light", "Depreciation", "Phones", "Lubrication", "Stationery", "Small Items", "Training", "Car Maintenance", "Building Maintenance" ] },
+            { "name" : "Taxes Paid"},
+            { "name" : "Dividend Payment"},
+            { "name" : "Extraordinary Investments"},
+            { "name" : "Capital Introduced"},
+            { "name" : "Revaluation Reserve"},
+            { "name" : "Drawings"}
+          ]
+	</structure>      </category>
+      <category  id="AE-DB">
+	<name>Debtors</name>
+      </category>
+      <category id="AE-IA">
+	<name>Intangible Assets</name>
+	<structure>
+	  [
+            { "name" : "R &amp; D"},
+            { "name" : "Brands"},
+            { "name" : "Goodwill"},
+            { "name" : "Brand Creation"}
+          ]
+	</structure>      </category>
+      <category id="AE-CA">
+	<name>Cash</name>
+	<structure>
+	  [
+            { "name" : "Operational", "instance" : [ "Sale of Product", "Sale of Asset", "Inventory Purchase", "Expenses", "Asset Purchase", "Pay Creditors", "Receive Debts" ] },
+            { "name" : "Non-Operational", "instance":[ "From Owners", "From Creditors", "To Owners", "To Creditors" ] }
+          ]
+	</structure>      </category>
+      <category id="AE-SI">
+	<name>Subsidiary Investments</name>
+      </category>
+      <category id="AE-AC">
+	<name>Associate Company</name>
+      </category>
+      <category id="AE-CR">
+	<name>Creditors</name>
+      </category>
+      <category id="AE-LTL">
+	<name>Long Term Loan</name>
+      </category>
+  </keywords>

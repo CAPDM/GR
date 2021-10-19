@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>A New Business</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  IDEALLY MAKE NO CHANGES  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-WS"><name>Wages &amp; Salaries</name></category3>
+	<category3 id="AE-OE-EX-OE"><name>Other Expenses</name></category3>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-EL"><name>Electricity</name></category3>
+	<category3 id="AE-OE-EX-HL"><name>Heat &amp; Light</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-ST"><name>Stationery</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Long Term Loan</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      The following question is about starting up a new business.  Work through the incremental changes in the Accounting Equation for all actions to produce the Financial Statements.
+    </preamble>
+
+    <transaction order="1">
+      <statement>An individual commences his business on 1 January with £20,000 cash.</statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="20000">
+	  <preamble>
+	    The amount of Owner's Equity signifies the owners claim over the assets of the enterprise. At the conclusion of this action the individual's stake in the business is worth £20,000.  This amount is therefore entered on the right-hand side of the equation.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/> <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="20000">
+	  <preamble>
+	    This is represented on the other side of the equation by a Cash entry of the same amount.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"/>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+
+      </actions>
+      <footnote>
+	This amount balances the Equity sum added above. The accounting equation is essentially the running balance sheet, so both sides must tally.  No other entries occur.
+      </footnote>
+    </transaction>
+
+    <transaction order="2">
+      <statement>Out of these cash resources he purchases plant and equipment for £12,000.</statement>
+
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="12000">
+	  <preamble>
+	    From the Cash resources the individual purchases Plant &amp; Equipment for £12,000. Only one side of the equation needs adjustments, namely the Asset side. Remember that the requirement is to enter the INCREMENTAL changes to the equation.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-12000">
+	  <preamble>
+	    This is balanced by a Cash adjustment used to purchase this asset.  This is entered as a negative amount as we record the incremental changes, in this case to the cash available.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"/>  <!-- Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="3">
+      <statement>Inventories of raw materials are purchased on credit for £6,000.</statement>
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="6000">
+	  <preamble>
+	    Another asset is acquired --- inventory --- financed by the suppliers of the inventory. Eventually the business will have to pay this amount in cash. Until it does Creditors remain a liability. How much is the owner now worth? Still 20,000, represented by 26,000 of assets less 6,000 owed to his creditors.  The incremental changes to the equation are: the asset.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="-6000">
+	  <preamble>
+	    Eventually these raw materials will be processed into finished goods.  They are paid for by Creditors.  This is not money in our pockets, but money owed to us.
+	  </preamble>
+	  <action>
+	    
+	  </action>
+	</equity>
+      </actions>
+
+    </transaction>
+
+    <transaction order="4">
+      <statement>£500 worth of inventory is processed through the machines at a labour cost of £20 to form finished goods inventory.</statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-20">
+	  <preamble>
+	    £500 worth of Raw Material Inventory is processed through the machines to produce Finished Goods Inventory. There is an associated labour cost of £20.  This £20 is cash spent on adding value to the Raw Material, all of which the business would hope to recover in the eventual selling price. There are 3 incremental changes: first the cash:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>  <!-- Operational, Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="1" amount="-500">
+	  <preamble>
+	    The labour cost is recorded as an Operational Expense.  The Raw Material inventories are run down by £500 in order to produce finished goods so two adjustments to Inventories are necessary. First:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="1" amount="520">
+	  <preamble>
+	    ... and finally the added value represented by the Finished Goods.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	The accountant, an employee of the business, is paid his wage of £10 in cash.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-10">
+	  <preamble>
+            The most important employee of the business, the accountant, is paid his wage of £10 in cash. Wages paid to production workers, as in the previous action, increase the value of the inventory to be sold; those of administrative workers do not increase the value of assets or vary with output, so are a charge against profits not yet earned. The incremental change is therefore to the value of the original capital.  There are two accounting equation entries.  First the cash is reduced:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>  <!-- Operational Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-10">
+	  <preamble>
+            ... and similarly the Owner's Equity by the same amount.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-WS"/>
+	    </category2>  <!-- Wages & Salaries -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	The entire finished goods inventory is sold for £750 on credit.
+      </statement>
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="-520">
+	  <preamble>
+	    The entire finished goods inventory is sold for £750 on credit. The company makes a profit of £230 on this transaction, which in turn increases the Owner's Equity. Debtors --- an Asset --- is created since cash has not been received for the sales. There are therefore 3 incremental changes to the accounting equation: Finished Goods eliminated ....
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>
+	  </action>
+	</asset>
+	<asset linkend="AE-DB" order="2" amount="750">
+	  <preamble>
+	    which are sold on credit, hence creating a debtor to the company.
+	  </preamble>
+	  
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="750">
+	  <preamble>
+	    Sales should generally result in a profit being recorded. This profit amount is the difference between the value of the Sales and the costs incurred in producing and selling the goods --- COGS.  This is done with the following two transactions:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="4" amount="-520">
+	  <preamble>
+	    ... and some Owner's Equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="7">
+      <statement>£3,000 of the amount due to suppliers is paid along with an advertising bill of £10. At this point the machine which has an effective working life of 24,000 hours has been used for 100 hours.</statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-3000">
+	  <preamble>
+	    This is a more complicated action: first the £3,000 paid to the suppliers has two incremental entries - the cash is reduced ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-TC"/>  <!-- To Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="3000">
+	  <preamble>
+	    and the creditors a paid off in part.  Note that paying off creditors is a non-operational cash transaction.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-FA" order="3" amount="-50">
+	  <preamble>
+	    The advertising bill is also paid in cash (an expense of being in business) and it also reduces the Owner's Equity. The depreciation charge on Plant is 50 for the 100 hours of use; this reduces the value of the plant and the level of Owner's Equity, where it is a Cost of Goods Sold (COGS) item.  There are therefore 4 incremental actions to put through:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Productive Equipment -->
+	    </category2>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="4" amount="-50">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="5" amount="-10">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>  <!-- Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="6" amount="-10">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-OE"/>
+	    </category2>  <!-- Other Expenses -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+  </transactions>
+</accountingequation>

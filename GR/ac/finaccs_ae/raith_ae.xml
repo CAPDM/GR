@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>Raith Enterprises</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  IDEALLY MAKE NO CHANGES  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-EL"><name>Electricity</name></category3>
+	<category3 id="AE-OE-EX-HL"><name>Heat &amp; Light</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-LUB"><name>Lubrication</name></category3>
+	<category3 id="AE-OE-EX-ST"><name>Stationery</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Long Term Loan</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      The following question is about starting up a company.  Work through the incremental changes in the Accounting Equation for all actions to produce the Financial Statements.
+    </preamble>
+    <transaction order="1">
+      <statement>
+	Robert Raith commences his Raith Enterprises business with £40,000 from his own savings along with £10,000 in cash from his father.  His father is not looking for any interest or early repayment of this loan.
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="40000">
+	  <preamble>
+	    Raith injects 40,000 of his own savings into the new company.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/> <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="40000">
+	  <preamble>
+	    Raith's equity injection is balanced by a cash asset.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"></category3>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+
+	<equity linkend="AE-LTL" order="3" amount="10000">
+	  <preamble>
+	    This amount is topped up by his father who offers Fred a long term loan
+	  </preamble>
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="10000">
+	  <preamble>
+	    which is represented by a cash asset.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FC"></category3>  <!-- Non-Operational, From Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+      The following assets are purchased: Plant &amp; Equipment to the value of £5,000 paid for in cash; a Factory &amp; Warehouse costing £25,000 also paid for in cash; essential Raw Materials to the value of £ 8,000 but paid half in cash, and half by credit.
+      </statement>
+
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="25000">
+	  <preamble>
+	    Raith sets the company up for production by buying factory premises
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-LB">
+	      <category3 catid="AE-FA-LB-BU"/>  <!-- Land &amp; Buildings, Buildings -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="2" amount="5000">
+	  <preamble>
+	    ... by buying Plant and Equipment
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Plant &amp; Equipment, Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="8000">
+	  <preamble>
+	    ... and by buying Inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM">  <!-- Raw Materials  -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="-30000">
+	  <preamble>
+	    The fixed assets are balanced by a cash outflow, aggregated to give:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"/>  <!-- Operational, Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="5" amount="-4000">
+	  <preamble>
+	    The raw materials are part paid in cash:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"/>  <!-- Operational, Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="6" amount="-4000">
+	  <preamble>
+	    and partly by Creditors.  Now he can begin to work!
+	  </preamble>
+	  
+	</equity>
+
+      </actions>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+      Before the equipment can function properly it requires post-installation lubrication costing £200.  Raith pays for this in cash. £4,000 worth of raw materials are then processed into finished goods through the equipment, at a cost of £400. 
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="200">
+	  <preamble>
+	    Raith's post installation lubrication of the productive equipment has been   capitalised, since the equipment would not work without this servicing.     The amount of this is therefore added to the original purchase price:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"></category3>  <!-- Plant &amp; Equipment, Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-200">
+	  <preamble>
+	    This is paid from cash. Any subsequent maintenance on this equipment will be expensed, i.e. paid for out of Owners' Equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"></category3>  <!-- Operational, Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="-4000">
+	  <preamble>
+	    The Raw Materials can now be transformed into Finished Goods.  First reduce the inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM">  <!-- Raw Materials -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="4" amount="4400">
+	  <preamble>
+	    Raith now has some stock of finished goods - inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG">  <!-- Finished goods -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="5" amount="-400">
+	  <preamble>
+	    This change in inventory is accomplished at a labour cost.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Operational, Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+
+      <footnote>
+	There are no changes in this action to EQUITY or LIABILITIES.
+      </footnote>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+	Raith pays his creditors in full and sells half the finished goods (recorded at cost of £2,200) for £4,000 credit.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-4000">
+	  <preamble>
+	    Raith pays his creditors off in full.  This reduces his cash ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PC"/>  <!-- Operational, Pay Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="4000">
+	  <preamble>
+	    ... and clears the creditors.
+	  </preamble>
+	  
+	</equity>
+	<asset linkend="AE-DB" order="3" amount="4000">
+	  <preamble>
+	    The sale of half the finished goods on credit creates a debtor.
+	  </preamble>
+	  
+	</asset>
+	<asset linkend="AE-SI" order="4" amount="-2200">
+	  <preamble>
+	    ... and reduces finished goods inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="4000">
+	  <preamble>
+	    But Sales are recorded!
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="6" amount="-2200">
+	  <preamble>
+	    This is not the profit on the sales since there are costs attached.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>  <!-- COGS -->
+	  </action>
+	</equity>
+      </actions>
+
+      <footnote>
+	The profit is the difference between Sales and the Cost of Goods Sold.
+      </footnote>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	Raith buys a second-hand delivery van for £3,000 on credit and a typewriter for his secretary for £200 cash.
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="3000">
+	  <preamble>
+            Raith buys more assets.  First, a delivery van.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-VL"/>  <!-- Motor Vehicles, Vans/Lorries -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="2" amount="200">
+	  <preamble>
+            ... and a typewriter
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-OA"/>  <!-- Other Assets -->
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="3" amount="-3000">
+	  <preamble>
+	    The van is paid for by creditors.
+	  </preamble>
+	  
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="-200">
+	  <preamble>
+	    ... while the typewriter is purchased from cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"/>  <!-- Operational, Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	Raith sells the remainder of the finished goods (recorded at a cost of £2,200) for £3,900 cash, and receives payment of £3,900 from his debtors.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="3900">
+	  <preamble>
+	    Raith's cash is boosted by most of his debts being repaid.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-RD"/>  <!-- Operational, Receive Debts -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-DB" order="2" amount="-3900">
+	  <preamble>
+	  </preamble>
+	  
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="-2200">
+	  <preamble>
+	    Selling the remainder of his finished goods is similar to action 4.  Stocks go down ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="3900">
+	  <preamble>
+	    ... and cash comes in.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SP"/>  <!-- Operation, Sale of Product -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="3900">
+	  <preamble>
+	    And a profit is recorded.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="6" amount="-2200">
+	  <preamble>
+	    Cost of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>  <!-- COGS -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="7">
+      <statement>
+	The delivery van breaks down and requires £100 of repairs which Raith pays in cash.  He buys further raw materials for £6,000 cash and processes the remainder of his first batch of raw materials (which had cost £4,000) at a cash cost for labour of £300.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-100">
+	  <preamble>
+	    The delivery van repairs is a cash expense which reduces owners equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Operational, Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-100">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-CM"></category3>  <!-- Expenses, Car Maintenance -->
+	    </category2>
+	  </action>
+	</equity>
+	<asset linkend="AE-SI" order="3" amount="6000">
+	  <preamble>
+	    The Raw Materials purchase is straightforward cash for inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="-6000">
+	  <preamble>
+	   </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"></category3>  <!-- Operational, Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="5" amount="-4000">
+	  <preamble>
+	    The processing of existing materials requires three changes. First raw materials go down.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="6" amount="4300">
+	  <preamble>
+	    Second, finished goods are produced with a greater value.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="7" amount="-300">
+	  <preamble>
+	    Finally, there has been a cost.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Operational, Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="8">
+      <statement>
+	At Christmas, Raith buys his wife a food mixer costing £100, and his secretary a fur jacket costing £1,200.  He pays for both items using his credit card.
+      </statement>
+      <actions>
+      </actions>
+
+      <footnote>
+	If you are reading this you probably have a lot to learn! The actions of buying a food mixer and a fur coat are total red-herrings (i.e. of no consequence to the problem) and are rather obvious ones at that.
+      </footnote>
+    </transaction>
+
+    <transaction order="9">
+      <statement>
+	He sells his second batch of finished goods (which are recorded at a cost of £4,300) for £6,000, receiving half the money in cash and giving credit for the other half.  He pays off his creditors.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-3000">
+	  <preamble>
+	    First pay off the creditors.  Cash goes out ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PC"/>  <!-- Operational, Pay Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="2" amount="-3000">
+	  <preamble>
+	    ... and creditors disappear.
+	  </preamble>
+	  
+	</equity>
+	<asset linkend="AE-SI" order="3" amount="-4300">
+	  <preamble>
+	    The sales of the finished goods inventory wipes stocks out.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="4" amount="3000">
+	  <preamble>
+	    Some cash come in.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SP"/>  <!-- Operational, Sale of Product -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-DB" order="5" amount="3000">
+	  <preamble>
+	    And the rest is owed, creating a debtor.
+	  </preamble>
+	  
+	</asset>
+	<equity linkend="AE-OE" order="6" amount="6000">
+	  <preamble>
+	    The Sales result in a small profit, being the difference between the value  of the sales and the cost of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="7" amount="-4300">
+	  <preamble>
+	    The cost of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>  <!-- COGS -->
+	  </action>
+	</equity>
+	
+      </actions>
+    </transaction>
+
+    <transaction order="10">
+      <statement>
+	Raith pays £400 cash for advertising and £200 cash for audit fees; he also has all of his raw materials (cost £6,000) processed, his labour force incurring £1,000 wages in so doing.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-1600">
+	  <preamble>
+	    There are three cash operating expenses, namely the audit fee, the advertising bill and the wages.  Aggregating these together:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Operational, Expenses -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-200">
+	  <preamble>
+	    The audit fee and the advertising bill is money lost to the company, so reducing the equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AU"></category3>  <!-- Expenses, Audit -->
+	    </category2>
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="3" amount="-400">
+	  <preamble>
+	    Advertising is an expense.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AD"></category3>  <!-- Expenses, Advertising -->
+	    </category2>
+	  </action>
+	</equity>
+	<asset linkend="AE-SI" order="4" amount="-6000">
+	  <preamble>
+	    The transformation of raw materials to finished goods inventory reduces raw materials:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM"/>  <!-- Raw Materials -->
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="5" amount="7000">
+	  <preamble>
+	    ... but produces finished goods.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	
+      </actions>
+    </transaction>
+
+    <transaction order="11">
+      <statement>
+	His auditors advise him that he should write off the debt of £100 which has been outstanding since transaction 4; in their opinion this debt is now irrecoverable.  They also recommend that he provides for depreciation on plant and equipment at a rate of 10%, and on motor vehicles at 25%.
+      </statement>
+      <actions>
+	<asset linkend="AE-DB" order="1" amount="-100">
+	  <preamble>
+	    The writing off of the bad debt reduces the outstanding Debtors ...
+	  </preamble>
+	  
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-100">
+	  <preamble>
+	    ... but the amount is lost to equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-BM"/>  <!-- Expenses, Bad Debt -->
+	    </category2>
+	  </action>
+	</equity>
+	<asset linkend="AE-FA" order="3" amount="-540">
+	  <preamble>
+	    The depreciation reduces the asset value of the plant &amp; equipment and of the motor vehicles.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Plant &amp; Equipment, Productive equipment -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="4" amount="-750">
+	  <preamble>
+	    Depreciation of the motor vehicles.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-VL"/>  <!-- Motor Vehicles, Vans/lorries -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="-1290">
+	  <preamble>
+	    This is also lost to equity.  Aggregating we get:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-DP"/>  <!-- Expenses, Depreciation -->
+	    </category2>
+	  </action>
+	</equity>
+
+      </actions>
+    </transaction>
+
+    <transaction order="12">
+      <statement>
+	Raith considers that one fifth of his factory and warehouse space is excessive for his needs; he sells that part for £7,000 cash. He withdraws £2,000 in cash for personal needs.
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="-5000">
+	  <preamble>
+	    One-fifth of Raith's factory is 5000 of asset ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-LB">
+	      <category3 catid="AE-FA-LB-BU"></category3>  <!-- Land &amp; Buildings, Buildings -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="7000">
+	  <preamble>
+	    ... sold for 7000 cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SA"></category3>  <!-- Operational, Sale of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="2000">
+	  <preamble>
+	    The difference has to be accounted for, in this case an Extraordinary Profit to appear in the P&amp;L statemen
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EI"/> <!-- Extraordinary Item -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="-2000">
+	  <preamble>
+	    Finally Raith allows himself some money from the business.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-TO"></category3>  <!-- Non-Operational, To owners -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="-2000">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-DR"/>  <!-- Drawings -->
+	  </action>
+	</equity>
+
+      </actions>
+    </transaction>
+  </transactions>
+</accountingequation>

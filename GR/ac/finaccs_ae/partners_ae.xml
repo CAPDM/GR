@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>A Hopefull Partnership</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  IDEALLY MAKE NO CHANGES  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-WS"><name>Wages &amp; Salaries</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-LE"><name>Lease</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-EL"><name>Electricity</name></category3>
+	<category3 id="AE-OE-EX-WO"><name>Write-Off</name></category3>
+	<category3 id="AE-OE-EX-PR"><name>Promotionals</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-IN"><name>Insurance</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Long Term Loan</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS trANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      A and B set up in partnership to retail personal computers from a City Centre location. 
+    </preamble>
+
+    <transaction order="1">
+      <statement>
+	Each partner, A and B,  introduces £20,000 cash: A borrows the sum from the bank on security of his house; B takes the sum from investments recently inherited from a deceased aunt. B also brings his motor car, valued at £10,000, to the partnership.  Profit sharing is in proportion to the capital introduced.
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="50000">
+	  <preamble>
+	    Though it may be of interest, the actual source of the partners' capital is irrelevant to the problem. The equation therefore starts off with the Equity
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/> <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="40000">
+	  <preamble>
+	    There are two balancing assets - first, Cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"/>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="3" amount="10000">
+	  <preamble>
+	    Secondly, a fixed asset - the car.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-CAR"/>  <!-- The Car -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+	Their first steps involve paying £5,000 in cash for the annual lease of the shop; signing a £10,000 contract with an advertising agency which will run for two years, paid half yearly in advance; negotiating an overdraft facility with their bankers for £10,000 in case of cash flow difficulties; and buying 20 SmartNote laptop computer for the business market at £400 each in case.
+      </statement>
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-8000">
+	  <preamble>
+	    There are a number of steps here --- first, the purchase of 20 SmartNote computers costs money.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"/>	<!-- Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="2" amount="8000">
+	  <preamble>
+	    This is balanced by an increase in Inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+
+	<asset linkend="AE-CA" order="3" amount="-7500">
+	  <preamble>
+	    The lease and the advertising contract are operating expenses and can be aggregated together as a cash outflow.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>  <!-- An Expense -->
+	    </category2>
+	  </action>
+	</asset>
+
+	<equity linkend="AE-OE" order="4" amount="-5000">
+	  <preamble>
+	    These are balanced by a loss of equity, from (i) the Lease
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-LE"/>  <!-- Lease -->
+	    </category2>
+	  </action>
+	</equity>
+      	<equity linkend="AE-OE" order="5" amount="-2500">
+	  <preamble>
+	    ... and (ii) Advertising.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AD"/>  <!-- Advertising -->
+	    </category2>
+	  </action>
+	</equity>
+      </actions>
+
+      <footnote>
+	Note: the full extent of the advertising contract would not be recorded in the accounting equation although the partners would put a note in the accounts at the end of the year that the firm had a contingent liability of £5,000.  The overdraft facility is irrelevant at this point and would not be recorded in the accounting equation or notes to the accounts.
+      </footnote>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+	Towards the end of January the shop received the first order for 5 SmartNote from a firm of accountants.  Normal retail price for the laptop is £1,000 but the accountants negotiate a 20% discount on each machine. The machines are delivered immediately and with payment to be made at the end of February. Additionally the motor car requires a service costing £200 in cash during January.
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-200">
+	  <preamble>
+	    Car maintenance, or servicing, is a cash operational expense ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP"><category3 catid="AE-CA-OP-EXP"/>
+</category2>  
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-200">
+	  <preamble>
+	    ... also lost as an expense to equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-CM"/>  <!-- Car Maintenance -->  
+	    </category2>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-SI" order="3" amount="-2000">
+	  <preamble>
+	    The order of the machines from the accountants results in a reduction in inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  
+	  </action>
+	</asset>
+
+	<asset linkend="AE-DB" order="4" amount="4000">
+	  <preamble>
+	    A Debtor is recorded since the accountants are going to pay next month.
+	  </preamble>
+	  <action>
+	  </action>
+	</asset>
+ 
+	<equity linkend="AE-OE" order="5" amount="4000">
+	  <preamble>
+	    Note: the 20% discount is reflected in this amount. However this is a sale since sales are recorded when the customer is invoiced, not when payment is received. The profit on the sale is the sale value less the cost of goods sold (COGS).
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->  
+	  </action>
+	</equity>
+	<equity linkend="AE-OE" order="6" amount="-2000">
+	  <preamble>
+	    ... and the cost of sale
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+	During February the partners decide to expand into the educational market by buying 100 DTop computers at £200 each.  They secured one month's credit from their supplier. Additionally they purchased a further 20 SmartNotes at £400 each, for cash. The firm of accountants duly paid their invoice at the end of the month.
+      </statement>
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="28000">
+	  <preamble>
+	    The purchase of new inventory is in two parts --- a cash outflow and a creditor. The inventory is aggregated together.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+
+	<asset linkend="AE-CA" order="2" amount="-8000">
+	  <preamble>
+	    This is paid partly from Cash ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"/>  <!-- Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="3" amount="-20000">
+	  <preamble>
+	    ... but mostly from Creditors!
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-DB" order="4" amount="-4000">
+	  <preamble>
+	    The accountants pay up so they are removed as a Debtor.
+	  </preamble>
+	  <action>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="5" amount="4000">
+	  <preamble>
+	    Which injects some Cash back into the business.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-RD"/>  <!-- Receive Debts -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	In March the following sales were made:&lt;ol&gt;&lt;li&gt;SmartNotes - 5 machines @ £1,000 to individuals for cash&lt;/li&gt;&lt;li&gt;10 machines @ £750 to a firm of stockbrokers (on 1 month's credit)&lt;/li&gt;&lt;li&gt;DTops - 40 machines @ £400 to Local Education(on 2 months credit)&lt;/li&gt;&lt;li&gt;5 machine as prizes at promotional events.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;At the end of the month the partners paid their invoice to the suppliers of DTop machines together with the insurance premiums on the car of £160 and on the unsold inventory (£1,000 against theft &amp; damage while awaiting sale). Both premiums cover a 12 month period in advance.&lt;/p&gt;&lt;p style="font-size: small;"&gt;This is a fairly complex transaction, with no fewer than 10 actions!&lt;/p&gt;
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-20000">
+	  <preamble>
+            The creditors are paid off. This is straighforward, though painful.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PC"/>  <!-- Pay Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-20000">
+	  <preamble>
+            ... and similarly adjust the Owner's Equity by the same amount.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-WS"/>
+	    </category2>  <!-- Wages & Salaries -->
+	  </action>
+	</equity>
+
+	<asset linkend="AE-SI" order="3" amount="-15000">
+	  <preamble>
+            The sales and gifts reduce the inventory levels significantly. Aggregating:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="4" amount="5000">
+	  <preamble>
+            but cash and debtors mount as a result. There is also a prepaid expense (5 SmartNotes @ £1,000 each)
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+ 	<asset linkend="AE-DB" order="5" amount="23790">
+	  <preamble>
+            This is calculated from 10 SmartNotes @ £750 plus 40 DTops @ £400. Add to this the prepaid expense of the insurance, valid for the first quarter of NEXT year, i.e. Car insurance 0.25 * £750 plus Damage insurance 0.25 * £1,000 = £40 + £250.
+	  </preamble>
+	  <action>
+	  </action>
+	</asset>
+ 	<asset linkend="AE-CA" order="6" amount="-1160">
+	  <preamble>
+            The total amount of the insurance is a cash expense.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>
+	    </category2>
+	  </action>
+	</asset>
+
+ 	<equity linkend="AE-OE" order="7" amount="28500">
+	  <preamble>
+            There is a profit from the sale of machines, though.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+ 	<equity linkend="AE-OE" order="8" amount="-14000">
+	  <preamble>
+            Though the sales come at a cost.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>
+	  </action>
+	</equity>
+
+ 	<equity linkend="AE-OE" order="9" amount="-870">
+	  <preamble>
+            The further 3/4 of the insurance, not recorded as a preprepared expense, is taken from equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-IN"/>  <!-- Insurance -->
+	    </category2>
+	  </action>
+	</equity>
+
+ 	<equity linkend="AE-OE" order="10" amount="-1000">
+	  <preamble>
+            Finally the partners gave machines away as prizes - a promotional expenditure.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-PR"/>  <!-- Promotionals -->
+	    </category2>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	At this stage the inventory position is as follows:&lt;ul&gt;&lt;li&gt;SmartNotes: 20 machines @ £400 = £8,000&lt;/li&gt;&lt;li&gt;DTop: 55 machines @ £200 = £11,000&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;During the next eight months the following transactions were recorded&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Debtors paid in full the sums owing at the end of March.&lt;/li&gt;&lt;li&gt;Purchases and Sales of SmartNotes (all for Cash) were:
+
+&lt;table border="1" style="font-size: small;"&gt;&lt;tr style="background-color: lightgrey;"&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Purchases&lt;/td&gt;&lt;td&gt;Sales&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Purchases&lt;/td&gt;&lt;td&gt;Sales&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;April &amp; May&lt;/td&gt;&lt;td&gt;10 @ £350&lt;/td&gt;&lt;td&gt;15 @ £800&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;June &amp; July&lt;/td&gt;&lt;td&gt;10 @ £300&lt;/td&gt;&lt;td&gt;5 @ £700&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;August &amp; September&lt;/td&gt;&lt;td&gt;10 @ £250&lt;/td&gt;&lt;td&gt;20 @ £600&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;October &amp; November&lt;/td&gt;&lt;td&gt;10 @ £200&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;The falling price charged by the suppliers reflect increased manufacturing efficiency and industry competition&lt;/p&gt;&lt;/li&gt;&lt;li&gt;Reports received from local schools on the DTop were negative. The price is dropped from £400 to £100 immediately.&lt;/li&gt;&lt;li&gt;Half yearly advertising account was paid in July (£2,500).&lt;/li&gt;&lt;/ol&gt;
+      </statement>
+      <actions>
+	<asset linkend="AE-DB" order="1" amount="-23500">
+	  <preamble>
+	    Debtors pay up.
+	  </preamble>
+	  <action>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="23500">
+	  <preamble>
+	    ... which increases Cash. Whoopee!
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-RD"/>  <!-- Receive Debts -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="27500">
+	  <preamble>
+	    However, there were lots of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="4" amount="27500">
+	  <preamble>
+	    The cash is boosted accordingly.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SP"/>  <!-- Sales of Product -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="5" amount="-14500">
+	  <preamble>
+	    There is always a cost of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-COGS"/>  <!-- Cost of Sales -->
+	  </action>
+	</equity>
+	<asset linkend="AE-SI" order="6" amount="-14500">
+	  <preamble>
+	    And this subtracts from inventory value.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+
+	<asset linkend="AE-CA" order="7" amount="-2500">
+	  <preamble>
+	    The advertising half yearly account was paid.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"/>  <!-- An Expense -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="8" amount="-2500">
+	  <preamble>
+	    Another expense at the cost of Owner's Equity.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AD"/>  <!-- Advertising Cost -->
+	    </category2>
+	  </action>
+	</equity>
+
+	<asset linkend="AE-SI" order="9" amount="5500">
+	  <preamble>
+	    The dropping of the price of the DTop machine to £100 wipes off £5,500 in value from the stock, but £11,000 of stock is also added:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>  <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="10" amount="-5500">
+	  <preamble>
+	    This is a write-off action - an expense.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">  
+	      <category3 catid="AE-OE-EX-WO"/>  <!-- Write-off -->
+	    </category2>
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="11" amount="-11000">
+	  <preamble>
+	    Buying inventory comes at a Cash cost.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-IP"/>  <!-- Inventory Purchase -->
+	    </category2>
+	  </action>
+	</asset>      
+      </actions>
+
+      <footnote>
+	Since that was a rather complex set of transactions, here is a summary.
+	&lt;table width="100%" border="1"&gt;
+	  &lt;tr&gt; 
+	    &lt;td colspan="2"&gt; 
+	      &lt;div align="center"&gt;&lt;font color="#009900"&gt;&lt;b&gt;CASH&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td colspan="2"&gt; 
+	      &lt;div align="center"&gt;&lt;font color="#009900"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td colspan="2"&gt; 
+	      &lt;div align="center"&gt;&lt;b&gt;&lt;font color="#009900"&gt;OWNERS' EQUITY&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;+23,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Debts paid&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;+ 3,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;- 5,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;Write off&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;- 3,000 &lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;+ 3,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;+ 12,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;Sales Revenue&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;- 3,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;+ 2,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;+ 3,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;Sales Revenue&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;- 2,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;+ 2,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;+ 12,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;Sales Revenue&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;- 2,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Purchases&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;- 6,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;- 6,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;+12,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Sales&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;- 2,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;- 2,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;+3,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Sales&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;- 6,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;(&lt;super&gt;1&lt;/super&gt;) COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;- 6,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;COGS&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;+12,000&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Sales&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;- 5,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;Write Off &lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; 
+	      &lt;div align="right"&gt;- 2,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="20%"&gt; 
+	      &lt;div align="right"&gt;Advertising&lt;/div&gt;
+	    &lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt; 
+	    &lt;td width="10%"&gt; 
+	      &lt;div align="right"&gt;-2,500&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="13%"&gt; 
+	      &lt;div align="right"&gt;Advertising&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="18%"&gt; 
+	      &lt;div align="right"&gt;&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="24%"&gt; 
+	      &lt;div align="right"&gt;(DTop)&lt;/div&gt;
+	    &lt;/td&gt;
+	    &lt;td width="15%"&gt; &lt;/td&gt;
+	    &lt;td width="20%"&gt; &lt;/td&gt;
+	  &lt;/tr&gt;
+	&lt;/table&gt;
+	&lt;p&gt;Note (&lt;super&gt;1&lt;/super&gt;) 10 SmartNotes @ 350 plus 10 at 300&lt;/p&gt;      </footnote>
+    </transaction>
+    
+    <transaction order="7">
+      <statement>
+	At the end of the year the auditor insisted that the partners write-off the DTop inventory because no one had purchased any of the unsold machines even at the reduced price. He also suggested a 25% depreciation rate on the car and indicated that his fee for the audit (to be invoiced early next year) would be £500. Tax at 40% would be paid on profits sometime next year.
+      </statement>
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="-2500">
+	  <preamble>
+	    The depreciation of the motor car affects the asset value ... 
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-CAR"/> 
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="-2500">
+	  <preamble>
+	    ... and is lost to equity also.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-DP"/>  <!-- Depreciation -->
+	    </category2>
+	  
+	  </action>
+	</equity>
+
+	<asset linkend="AE-SI" order="3" amount="-5500">
+	  <preamble>
+	    The remaining DTop machines are written off.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/>   <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="4" amount="-5500">
+	  <preamble>
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-WO"/>  <!-- Write-off -->
+	    </category2>
+	  </action>
+	</equity>
+
+	<equity linkend="AE-OE" order="5" amount="-500">
+	  <preamble>
+	    The auditors fee is payable next year so it is not paid out of cash - it is paid on credit.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-EX">
+	      <category3 catid="AE-OE-EX-AU"/>  <!-- Audit -->
+	    </category2>
+	  </action>
+	</equity>
+
+	<equity linkend="AE-OE" order="6" amount="-1372">
+	  <preamble>
+	    There is another amount to aggregate into the creditors entry.  The tax payable is determined from the P&amp;L. The Owner's Equity column must be summed, and the opening balance deducted. Our last but one entry is:
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-TP"/>  <!-- taxes Payable -->
+	  </action>
+	</equity>
+	<equity linkend="AE-CR" order="7" amount="-1872">
+	  <preamble>
+	    And finally, the creditors value is the tax plus the audit fee (= £1,372 + £500).  This is being paid next year.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+      </actions>
+    	<footnote>
+    		The tax rate is 40% so multiply the calculated profit difference by 0.4 to get £1,372.
+    	</footnote>    </transaction>
+  </transactions>
+</accountingequation>

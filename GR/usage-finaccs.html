@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//SQ//DTD HTML 2.0 + all extensions//EN" "hmpro3.dtd">
+
+<html>
+
+<head>
+
+<style type="text/css">
+.finaccs-table {
+  font-size: small;
+}
+.finaccs-table thead {
+  display: none;
+}
+.finaccs-tab {
+  font-size: smaller;
+}
+
+</style>
+
+<!-- LINK href="css/capdm_applet.css" REL="STYLESHEET" TYPE="text/css" -->
+
+<title>FinAccs</title>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
+
+<!-- =============== INCLUDES vvvvvvvv ============== -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="ac/finaccs.css">\
+<script src="ac/finaccs.js"></script>   // FinAccs Javascript
+
+<!-- ============== NECESSARY TAB SUPPORT ============ -->
+<script LANGUAGE="JavaScript"><!-- hide script from old browsers
+
+  $( function() {
+    $( "#finaccs-tabs" ).tabs();
+    $("#finaccs-st-tabs").tabs();
+  } );
+
+  // end of JavaScript-->
+</script>
+
+<!-- =============== INCLUDES ^^^^^^^^^ ============= -->
+</head>
+
+<body BGCOLOR="#FFFFFF">
+<table width="100%" border="0">
+  <tr>
+    <td valign="top" height="43">
+      <h1>CAPDM Tutorial Applets</h1>
+    </td>
+    <td valign="top" height="43"><img src="../../images/capdmlogo_small.gif"   align="right"></td>
+  </tr>
+</table>
+
+<h2>FinAccs</h2>
+<h3>Functionality:</h3>
+<p>This applet implements the Accounting Equation and includes ready built examples.  It also allows a user to upload examples of their own - at their peril!  Examples are built in XML, for which there is an available AE Scheme against which examples should be parsed before use - see <a href-"https://www.freeformatter.com/xml-validator-xsd.html">XML Validator</a>.<br>
+</p>
+<h3></h3>
+
+<!-- =============== DETAIL vvvvvvvv ============== -->
+
+<!-- The Modal -->
+<div id="fa-modal-action-amount" class="fa-modal">
+  <form id="fa-action-form">
+  <!-- Modal content -->
+  <div class="fa-modal-content">
+    <span class="fa-modal-close"  onclick="(function(){$('#fa-modal-action-amount').hide();})();">&times;</span>
+    <p>Enter an amount for:</p><p id="fa-modal-keyword">Keyword</p>
+    <br/>
+    <input id="fa-modal-action-type" type="hidden" value=""/>  <!-- OE or Asset/Liability -->
+    <input id="fa-modal-action-leaf" type="hidden" value=""/>  <!-- Leaf number -->
+    <input id="fa-action-amount" type="number"/>
+    <br/>
+    <button id="fa-action-accept" type="submit">Accept</button>  
+    <button type="reset" onclick="(function(){$('#fa-modal-action-amount').hide();})();">Cancel</button>
+  </div>
+  </form>
+
+</div>
+
+
+<table border="0" cellspacing="15">
+  <tr align="center">
+    <td style="width: 800px">
+      
+<!-- =============== THE TABS ============== -->
+      <div id="finaccs-tabs" class="finaccs-tabs">
+	<ul>
+	  <li class="finaccs-tab"><a href="#finaccs-tabs-1">Question</a></li>
+	  <li class="finaccs-tab"><a href="#finaccs-tabs-2">Transaction</a></li>
+	  <li class="finaccs-tab"><a href="#finaccs-tabs-3">Explanation</a></li>
+	  <li class="finaccs-tab"><a href="#finaccs-tabs-4">Statements</a></li>
+	  <li class="finaccs-tab"><a href="#finaccs-tabs-5">About</a></li>
+	</ul>
+
+	<div id="finaccs-tabs-1">
+
+<!-- =============== CUSTOM TABLE ============== -->
+          <div id="fa_question">
+	    <table border="1" width="100%" height="100%" class="finaccs-table">
+	      <tr>
+		<th>Choose a Question</th>
+	      </tr>
+	      <tr>
+		<td>
+		  <span id="fa_question_list"><p>Choose from:</p><div id="fa-q-list" class="fa-btn-group"></div><p>... or drag and drop an AE file to the<span class="fa-question-drop-area"> drop area below </span>, or choose a file.</p></span>
+		</td>
+	      </tr>
+	      <tr>
+		<td><!-- The `multiple` attribute lets users select multiple files. -->
+		  <input type="file" id="fa-question-selector"  class="fa-question-drop-area" 
+			 accept=".xml" style="margin: 2px 2px 2px 2px; border: 2px dashed #BBBB">
+		  <span id="fa-question-message"><i class="fa fa-angle-double-left ">&nbsp;&nbsp;</i>Drag and drop AE questions here</span>
+		</td>
+	      </tr>
+	    </table>
+	  </div>
+        </div>
+
+<!-- =============== NECESSARY CANVAS TABS ============== -->
+	<div id="finaccs-tabs-2">
+	  <table border="1" width="100%" class="fa-height finaccs-table">
+	    <tr height="20%">
+	      <td class="fa-current-transaction"  style="overflow-y: auto;" colspan="3">
+		<div id="fa-current-transaction" class="fa-yscroll-tr">Transaction</div>
+	      </td>
+	    </tr>
+	    <tr height="5%">
+	      <th width="30%">Accounting Keywords</th>
+	      <th width="35%">Assets</th>
+	      <th width="35%">Owner's Equity + Liabilities</th>
+	    </tr>
+	    <tr height="*%">
+	      <td style="overflow-x: auto;">
+		<div class="fa-xyscroll">
+		  <ul id="fa-keywords-tree">
+		    <!-- to be filled in per question -->
+		  </ul>	      
+		</div>
+	      </td>
+	      <td id="fa-asset-drop-area">
+		<table id="fa-asset-list">
+		</table>
+	      </td>
+	      <td id="fa-equity-drop-area">
+		<table id="fa-equity-list">
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+	  <p><button id="fa-transaction-complete" type="submit">Complete</button></p>
+	  <p>Drag &amp; drop keywords to the appropriate column.  Double click the &times; to delete a wrong entry. When transaction is complete, accept by hitting the button above.</p>
+	</div>
+	
+	<div id="finaccs-tabs-3">
+	  <p><span class="fa-explain-header">Details of the Transactions.</span></p>
+	  <div id="fa-transaction-explained">
+	  </div>
+	</div>
+
+	<div id="finaccs-tabs-4">
+	  <div id="finaccs-st-tabs" class="finaccs-tabs">
+	    <ul>
+	      <li class="finaccs-tab"><a href="#finaccs-tabs-st1">Balance Sheet</a></li>
+	      <li class="finaccs-tab"><a href="#finaccs-tabs-st2">Profit &amp; Loss</a></li>
+	      <li class="finaccs-tab"><a href="#finaccs-tabs-st3">Cash Flow</a></li>
+	    </ul>
+	    
+	    <div id="finaccs-tabs-st1">
+	      <div id="fa_balance_sheet">
+	      </div>
+            </div>
+	    <div id="finaccs-tabs-st2">
+	      <div id="fa_profit_loss">
+	      </div>
+	    </div>
+	    <div id="finaccs-tabs-st3">
+	      <div id="fa_cash_flow">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div id="finaccs-tabs-5">
+	  <div class="">
+	    <p>&copy; Copyright 2021 <a href="https://www.capdm.com/" title="CAPDM Ltd.">CAPDM Ltd.</a>, Edinburgh, UK.</p>
+	    <div style="font-size: small;">
+	      <p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+	      <p>This program is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <a href="https://www.gnu.org/licenses/" title="GNU General Public License">GNU General Public License</a> for more details.</p>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </td>
+
+<!-- =============== HTML EXAMPLE CALLS ============== -->
+    <td align="left" valign="top">
+      <h4>Remote Control using JavaScript</h4>
+      <p>Version information for this applet can be displayed. The applet can 
+        also be reset to its initial settings.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+  </tr>
+</table>
+<!-- =============== DETAIL ^^^^^^^^ ============== -->
+
+<h2>How to Invoke the Applet</h2>
+<p>See usage-finaccs.html (this file).</p>
+<hr align="center" width="50%" color="#009999">
+</body>
+</html>

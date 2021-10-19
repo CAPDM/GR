@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//SQ//DTD HTML 2.0 + all extensions//EN" "hmpro3.dtd">
+
+<HTML>
+
+<HEAD>
+
+<style type="text/css">
+.wacc-table {
+  font-size: small;
+}
+.wacc-table thead {
+  display: none;
+}
+.wacc-tab {
+  font-size: smaller;
+}
+
+</style>
+
+<!-- LINK href="css/capdm_applet.css" REL="STYLESHEET" TYPE="text/css" -->
+
+<TITLE>Weighted Average Cost of Capital</TITLE>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- =============== INCLUDES vvvvvvvv ============== -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="gr/grunit.js"></script>      // Graphics
+<script src="fi/wacc.js"></script>   // Normal function
+
+<!-- ============== NECESSARY TAB SUPPORT ============ -->
+<SCRIPT LANGUAGE="JavaScript"><!-- hide script from old browsers
+
+  $( function() {
+    $( "#wacc-tabs" ).tabs();
+  } );
+
+// end of JavaScript-->
+</script>
+<!-- =============== INCLUDES ^^^^^^^^^ ============= -->
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+<table width="100%" border="0">
+  <tr>
+    <td valign="top" height="43">
+      <h1>CAPDM Tutorial Applets</h1>
+    </td>
+    <td valign="top" height="43"><img src="../../images/capdmlogo_small.gif"   align="right"></td>
+  </tr>
+</table>
+<h2>Weighted Average Cost of Capital</h2>
+<h3>Functionality:</h3>
+This applet shows how company value and return on assets depend on the level of 
+gearing. 
+<p>At a common sense level it seems obvious that it does not matter whether a 
+  company is financed by borrowing or by equity. However, this is wrong. There 
+  are two main reasons for this. First, borrowing takes precedence over equity, 
+  therefore to the extent that a company finances itself by borrowing, the equity 
+  becomes more risky. Second, the interest paid on borrowing is free of corporation 
+  tax, therefore the extent to which the company is geared affects the after tax 
+  cash flow.<br>
+</p>
+<h3></h3>
+
+<!-- =============== DETAIL vvvvvvvv ============== -->
+<table border="0" cellspacing="15">
+  <tr align="center">
+    <td align="right" style="width: 600px">
+      
+<!-- =============== THE TABS ============== -->
+      <div id="wacc-tabs">
+	<ul>
+	  <li class="wacc-tab"><a href="#wacc-tabs-1">Capital Structure</a></li>
+	  <li class="wacc-tab"><a href="#wacc-tabs-2">Company Value</a></li>
+	  <li class="wacc-tab"><a href="#wacc-tabs-3">Expected Return</a></li>
+	</ul>
+	<div id="wacc-tabs-1">
+
+<!-- =============== CUSTOM TABLE ============== -->
+	  <table border="1" width="100%" class="wacc-table">
+	    <!--
+		<thead>
+		  <tr>
+		    <th style="width: 40%;"></th>
+		    <th style="width: 10%;"></th><th style="width: 10%;"></th><th style="width: 10%;"></th>
+		    <th style="width: 10%;"></th><th style="width: 10%;"></th><th style="width: 10%;"></th>
+		  </tr>
+		</thead>
+		-->
+	    <tr><td colspan="7">Gearing Levels</td></tr>
+	    <tr>
+	      <td style="width: 40%;"></td>
+	      <td style="text-align: center; width: 10%;">0.00</td>
+	      <td style="text-align: center; width: 10%;">20.00</td>
+	      <td style="text-align: center; width: 10%;">40.00</td>
+	      <td style="text-align: center; width: 10%;">60.00</td>
+	      <td style="text-align: center; width: 10%;">80.00</td>
+	      <td style="text-align: center; width: 10%;">99.00</td>
+	    </tr>
+	    <tr>
+	      <td>Return on Asset (%)</td>
+	      <td id="kf_0" style="text-align: right"></td>
+	      <td id="kf_1" style="text-align: right"></td> 
+	      <td id="kf_2" style="text-align: right"></td>
+	      <td id="kf_3" style="text-align: right"></td>
+	      <td id="kf_4" style="text-align: right"></td>
+	      <td id="kf_5" style="text-align: right"></td>
+	    </tr>
+	    <tr>
+	      <td>Cost of Equity (%)</td>
+	      <td id="ke_0" style="text-align: right"></td>
+	      <td id="ke_1" style="text-align: right"></td> 
+	      <td id="ke_2" style="text-align: right"></td>
+	      <td id="ke_3" style="text-align: right"></td>
+	      <td id="ke_4" style="text-align: right"></td>
+	      <td id="ke_5" style="text-align: right"></td>
+	    <tr>
+	      <td>Cost of Debt (%)</td>
+	      <td id="kd_0" style="text-align: right"></td>
+	      <td id="kd_1" style="text-align: right"></td> 
+	      <td id="kd_2" style="text-align: right"></td>
+	      <td id="kd_3" style="text-align: right"></td>
+	      <td id="kd_4" style="text-align: right"></td>
+	      <td id="kd_5" style="text-align: right"></td>
+	    <tr>
+	      <td>WACC (%)</td>
+	      <td id="wacc_0" style="text-align: right"></td>
+	      <td id="wacc_1" style="text-align: right"></td> 
+	      <td id="wacc_2" style="text-align: right"></td>
+	      <td id="wacc_3" style="text-align: right"></td>
+	      <td id="wacc_4" style="text-align: right"></td>
+	      <td id="wacc_5" style="text-align: right"></td>
+	    <tr>
+	      <td>Value of Company</td>
+	      <td id="v_0" style="text-align: right"></td>
+	      <td id="v_1" style="text-align: right"></td> 
+	      <td id="v_2" style="text-align: right"></td>
+	      <td id="v_3" style="text-align: right"></td>
+	      <td id="v_4" style="text-align: right"></td>
+	      <td id="v_5" style="text-align: right"></td>
+	    <tr>
+	      <td>Value of Equity</td>
+	      <td id="e_0" style="text-align: right"></td>
+	      <td id="e_1" style="text-align: right"></td> 
+	      <td id="e_2" style="text-align: right"></td>
+	      <td id="e_3" style="text-align: right"></td>
+	      <td id="e_4" style="text-align: right"></td>
+	      <td id="e_5" style="text-align: right"></td>
+	    <tr>
+	      <td>Value of Debt</td>
+	      <td id="d_0" style="text-align: right"></td>
+	      <td id="d_1" style="text-align: right"></td> 
+	      <td id="d_2" style="text-align: right"></td>
+	      <td id="d_3" style="text-align: right"></td>
+	      <td id="d_4" style="text-align: right"></td>
+	      <td id="d_5" style="text-align: right"></td>
+	    <tr>
+	      <td>Interest Tax Shield</td>
+	      <td id="vits_0" style="text-align: right"></td>
+	      <td id="vits_1" style="text-align: right"></td> 
+	      <td id="vits_2" style="text-align: right"></td>
+	      <td id="vits_3" style="text-align: right"></td>
+	      <td id="vits_4" style="text-align: right"></td>
+	      <td id="vits_5" style="text-align: right"></td>
+	  </table>
+	</div>
+
+<!-- =============== NECESSARY CANVAS TABS ============== -->
+	<div id="wacc-tabs-2">
+	  <canvas id="fiWACCValue" width="600" height="400" style="border:1px solid #000000;"></canvas>
+	</div>
+	<div id="wacc-tabs-3">
+	  <canvas id="fiWACCReturn" width="600" height="400" style="border:1px solid #000000;"></canvas>
+	</div>
+      </div>
+      
+<!-- =============== CREATE THE GRAPHICS - TWO HERE ============== -->
+      <script>
+	var fiwacccv  = wacc("fiWACCValue");  // 
+	fiwacccv.fiCompanyValue();       // Calls the Company Value tab function
+	
+	var fiwaccer  = wacc("fiWACCReturn");  // 
+	fiwaccer.fiExpectedReturns();       // Calls the Expected Returns tab function
+      </script>
+    </td>
+
+<!-- =============== HTML EXAMPLE CALLS ============== -->
+    <td align="left" valign="top">
+      <h4>Remote Control using JavaScript</h4>
+      <p>Version information for this applet can be displayed. The applet can 
+        also be reset to its initial setings.</p>
+      <h5>Examples</h5>
+      <p><a href="javascript:fiwacccv.setTS(35); fiwacccv.setTSSlider('fiTSSlider');
+		  fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();"
+	    onMouseOver="window.status='Set Corporation Tax Rate to 35%';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Set Corporation Tax Rate to 35%</a></p>
+      <p><a href="javascript:fiwacccv.setKU(25); fiwacccv.setKUSlider('fiKUSlider');
+		  fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();"
+	    onMouseOver="window.status='Set Unleveraged Rate to 35%';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Set Unleveraged Rate to 25%</a></p>
+      <p><a href="javascript:fiwacccv.setRF(5); fiwacccv.setRFSlider('fiRFSlider');
+		  fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();"
+	    onMouseOver="window.status='Set Risk Free Rate to 5%';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Set Risk Free Rate to 5%</a></p>
+      <p><a href="javascript:fiwacccv.setNOCF(7500); fiwacccv.setNOCFSlider('fiNOCFSlider');
+		  fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns()"
+	    onMouseOver="window.status='Set Net Op Cash Flow to 7500';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Set Net Op Cash Flow to 7500</a></p>
+
+      <p><a href="javascript:fiwacccv.resetApplet();  fiwacccv.setTSSlider('fiTSSlider');
+		  fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();"
+	    onMouseOver="window.status='Reset applet';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Reset Applet</a></p>
+      <p><a href="javascript:fiwacccv.showAbout()"
+	    onMouseOver="window.status='Show version dialog';return true;"
+	    onMouseOut="window.status='';return true;" class="interaction">Show 'About' dialog</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<!-- =============== INDEPENDENT VARIABLES vvvvvv ============== -->
+      <table>
+	<tr>
+	  <td>
+      Corp. Tax (%):
+      <input id="fiTSSlider" 
+	     onchange="fiwacccv.setTS(value); fiwacccv.setTSSlider(this.id);
+		       fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();" 
+	     value=40 min=0 max=90 step=1 type="number" size="4"> 
+	  </td>
+	  <td>
+      Unleveraged Rate (%):
+      <input id="fiKUSlider" 
+	     onchange="fiwacccv.setKU(value); fiwacccv.setKUSlider(this.id);
+		       fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();" 
+	     value=20 min=0 max=90 step=1 type="number" size="4">
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	  Risk Free Rate (%):
+      <input id="fiRFSlider" 
+	     onchange="fiwacccv.setRF(value); fiwacccv.setRFSlider(this.id);
+		       fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();" 
+	     value=7 min=0 max=49 step=1 type="number" size="4"> 
+	  </td>
+	  <td>
+      Net Op. Cash Flow:
+      <input id="fiNOCFSlider" 
+	     onchange="fiwacccv.setNOCF(value); fiwacccv.setNOCFSlider(this.id);
+		       fiwacccv.fiCompanyValue(); fiwaccer.fiExpectedReturns();" 
+	     value=5000 min=0 max=10000 step=500 type="number" size="4">
+	  </td>
+	</tr>
+      </table>
+<!-- =============== INDEPENDENT VARIABLES ^^^^^^ ============== -->
+    </td>
+  </tr>
+</table>
+<!-- =============== DETAIL ^^^^^^^^ ============== -->
+
+<h2>How to Invoke the Applet</h2>
+<p>The applet can be invoked by embedding an APPLET tag into your HTML document
+  (if you look at the source of this document you will see a working example you
+  can copy). The table below details the basic parameters used and additional
+  startup parameters that are specific to this applet.</p>
+<pre>&lt;APPLET
+  CODEBASE=&quot;../../../../classes&quot;
+  ALT=&quot;Weighted Average Cost of Capital&quot;
+  CODE=&quot;applet.capdm.finance.wacc.WACCApp&quot;
+  NAME=&quot;WACC&quot;
+  WIDTH=&quot;400&quot;
+  HEIGHT=&quot;500&quot;&gt;
+&lt;/APPLET&gt;</pre>
+<table border="1" bordercolor="#188C21" cellspacing="0" cellpadding="3">
+  <tr>
+    <td width="300"><b>Basic Parameters</b></td>
+    <td><b>Use</b></td>
+  </tr>
+  <tr>
+    <td width="300">CODEBASE=&quot;../../../../classes&quot; </td>
+    <td>The CODEBASE of the applet must point at the top-level classes directory
+      in order for the applet to be found.</td>
+  </tr>
+  <tr>
+    <td width="300">CODE=&quot;applet.capdm.finance.<br>
+      wacc.WACCApp &quot;</td>
+    <td>This required attribute gives the name of the file that contains the applet's
+      compiled Applet subclass. This file is relative to the base URI of the applet.
+    </td>
+  </tr>
+  <tr>
+    <td width="300">ALT=&quot;Weighted Average Cost of Capital&quot;</td>
+    <td>This optional attribute specifies any text that should be displayed if
+      the browser understands the APPLET tag but can't run Java applets. </td>
+  </tr>
+  <tr>
+    <td width="300">NAME=&quot;WACC&quot;</td>
+    <td>This optional attribute specifies a name for the applet instance, which
+      makes it possible for applets on the same page to find (and communicate
+      with) each other. If you intend to use JavaScript/Applet scripting then
+      the applet must be named as shown.</td>
+  </tr>
+  <tr>
+    <td>WIDTH=&quot;400&quot; HEIGHT=&quot;500&quot;</td>
+    <td>These required attributes give the initial width and height (in pixels)
+      of the applet display area, not counting any windows or dialogs that the
+      applet brings up. </td>
+  </tr>
+  <tr>
+    <td><b>Applet Startup Parameters</b></td>
+    <td><b>Use</b></td>
+  </tr>
+</table>
+<p>For more information on the use of the APPLET tag and other attributes you
+  can use but which are not listed above, visit the W3.org specification page
+  at: <a
+ href="http://www.w3.org/TR/REC-html40/struct/objects.html#edef-APPLET">APPLET
+  tag in HTML 4</a>.</p>
+<h2>Runtime Applet API Calls</h2>
+<p>This applet can be called into using Javascript 1.1 while running. Although
+  JavaScript can call the Applet directly, some convenient JavaScript functions
+  have been created which deal with the details of the communication. The following
+  table lists the call Names which can be made, and gives examples of their use
+  and results.</p>
+<table border="1" vspace="2" cellpadding="3" cellspacing="0"
+ bordercolor="#188C21">
+  <tr> 
+    <td width="264"><b>API Call Name</b></td>
+    <td width="235"><b>Parameters</b></td>
+    <td width="593"><b>Use and Result</b></td>
+  </tr>
+  <tr> 
+    <td width="264">showAbout()</td>
+    <td width="235">none</td>
+    <td width="593"> <code>javascript:showAbout();</code> Shows the version dialog 
+      box of this applet. </td>
+  </tr>
+  <tr> 
+    <td width="264">reset()</td>
+    <td width="235">none</td>
+    <td width="593"> <code>javascript:reset();</code> resets the applet to initial 
+      starting position </td>
+  </tr>
+</table>
+<p><br>
+</p>
+<hr align="center" width="50%" color="#009999">
+</BODY>
+</HTML>

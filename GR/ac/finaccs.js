@@ -58,10 +58,11 @@
     const AE_FINISHED = "You have finished all the transactions. End of question.";
     const AE_FILEENDING = "Expected a file name ending with _ae.xml";
     const AE_NOVALUE = "You have not supplied a value!";
-    const AE_NOATTEMPT = "You have not attempted any action yet.\r\n\r\nDo you want to continue?";
+    const AE_NOATTEMPT = "You have not attempted any action yet.";
     const AE_THISTRANSACTION = "Transacton: ";
     const AE_RESTART_CLICK = "Double Click to restart at Transaction ";
     const AE_EMPTY = "No Transactions to report";
+    const AE_DELETE_ENTRY = "Delete this entry?";
 
     const BS_INVEST  = "Investments";
     const BS_INTANG  = "Intangibles";
@@ -437,14 +438,19 @@ console.log(fa_q.keywords);
 	buildTransactions(fa_q.transactions);
 
 	fa_current_transaction = 0;  // Reset to start
-	$('#fa-current-transaction').html('<p class="fa-this-transaction">' + AE_THISTRANSACTION 
+	$('#fa-current-transaction').html('<p class="fa-this-transaction">' 
+					  + '<span class="fa-q-title">' + fa_q.title + '</span> '
+					  + AE_THISTRANSACTION 
 					  + (fa_current_transaction+1) + ' (of ' + fa_q.transactions.transaction.length + ')'
 					  + '</p><p>' + fa_q.transactions.transaction[fa_current_transaction].statement + '</p>');
 
 //console.log(fa_q.transactions);
 	// Show the question in the Question tab
 	var q = '<table class="fa-height">';
-	q += '<tr class="fa-q-statement"><td><p class="fa-q-preamble">' + fa_q.transactions.preamble + '</p></td></tr>';  // Preamble first
+	q += '<tr class="fa-q-statement"><td><p class="fa-q-preamble">' 
+	    + '<span class="fa-q-title">' + fa_q.title + '</span> '
+	    + fa_q.transactions.preamble 
+	    + '</p></td></tr>';  // Preamble first
 	q += '<tr><td style="overflow-y: auto"><div class="fa-yscroll">';
 	for (var i=0 ; i<fa_q.transactions.transaction.length; i++) {
 	    q += '<p><button type="button" id="fa-btn-restart-' + i + '" class="fa-restart" data-start="' + i + '" title="' + AE_RESTART_CLICK + (i+1)
@@ -653,7 +659,9 @@ console.log("Selected question");  console.log(q);
 	    $("#finaccs-tabs").tabs({active: 2});
 }
 	else {
-	    $('#fa-current-transaction').html('<p class="fa-this-transaction">' + AE_THISTRANSACTION 
+	    $('#fa-current-transaction').html('<p class="fa-this-transaction">' 
+					      + '<span class="fa-q-title">' + fa_q.title + '</span> '
+					      + AE_THISTRANSACTION 
 					      + (fa_current_transaction+1) + ' ( of ' + fa_q.transactions.transaction.length + ')'
 					      + '</p><p>' + fa_q.transactions.transaction[fa_current_transaction].statement + '</p>');
 	    
@@ -1661,7 +1669,7 @@ console.log("Selected question");  console.log(q);
 		// Attach an event handler to this entry to pick up a potential delete
 		var evh = document.getElementById('fa-' + ae_side + '-item-' + fa_num_actions);  // Get the <tr> node
 		evh.addEventListener("dblclick", function() {
-		    if (confirm("Delete this entry?")) {
+		    if (confirm(AE_DELETE_ENTRY)) {
 			// Find this entry in the answers
 			for (var i=0; i<fa_q.transactions.transaction[fa_current_transaction].answer.length; i++) {
 			  if (fa_q.transactions.transaction[fa_current_transaction].answer[i][0] == $(this).attr('id')) {
@@ -1690,8 +1698,8 @@ console.log("Selected question");  console.log(q);
 	$("#fa-transaction-complete").on('click', function(e) { 
 	    e.preventDefault();
 	    if (fa_num_actions == 0) {
-		if (!confirm(AE_NOATTEMPT))
-		    return false;
+		alert(AE_NOATTEMPT);
+		return false;
 	    }
 
 	    // Now work out what has been done

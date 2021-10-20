@@ -26,6 +26,8 @@ td div.fa-yscroll-tr {
 
 input.fa-question-drop-area, span.fa-question-drop-area {
     background-color: bisque;
+    border: 1px dashed;
+    border-radius: 5px;
 }
 
 
@@ -50,6 +52,12 @@ table.fa-statement-cf {
 
 tr.fa-q-statement {
     background-color: aliceblue;
+}
+
+span.fa-q-title {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 td.fa-current-transaction {

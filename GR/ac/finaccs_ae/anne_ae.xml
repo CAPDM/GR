@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>Anne's Computer Business</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  
+       CATEGORY3 ITEMS CAN BE CHANGED, BUT KEEP THE NUMBERS DOWN!  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-FF"><name>Furniture &amp; Fittings</name></category3>
+	<category3 id="AE-OE-EX-HL"><name>Heat &amp; Light</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-LUB"><name>Lubrication</name></category3>
+	<category3 id="AE-OE-EX-ST"><name>Stationery</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Loans/Overdrafts</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      Anne has decided to enter business selling computer hardware and software. The following is a summary of her financial transactions for the first week of her business’s existence.  Use the Accounting Equation to build up her financial statements.
+    </preamble>
+
+    <transaction order="1">
+      <statement>
+	Using her savings, Anne opens a separate business bank account with £400 000.
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-OE" order="1" amount="400000">
+	  <preamble>
+	    Anne introduces Capital into the business - from herself.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/> <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="400000">
+	  <preamble>
+	    This is available as Cash from the owner.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"></category3>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+	Anne purchases suitable premises comprising retail space, storage and office for £375 000, paying by bank transfer.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-FA" order="1" amount="375000">
+	  <preamble>
+	    Anne basically is buying buildings - Fixed Assets - for herself.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-LB"> <!-- Land and Buildings -->
+	      <category3 catid="AE-FA-LB-BU"/>
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-375000">
+	  <preamble>
+	    A bank transfer is basically the same as paying by Cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA"></category3>  <!-- Purchase of Asset -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+      <footnote>
+	<!-- Optional Footnote??? -->
+      </footnote>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+	Anne acquires: furniture &amp; fittings and other productive equipment for the premises at a cost of £30,000; and a delivery van costing £10,000, all from money from her business bank account.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-FA" order="2" amount="30000">
+	  <preamble>
+	    She buys productive Plant and Equipment (including the furniture and fittings), which is an asset
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-PE">
+	      <category3 catid="AE-FA-PE-PEQ"/>  <!-- Plant &amp; Equipment, Productive Equipment -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="3" amount="10000">
+	  <preamble>
+            The delivery van is also an asset.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-VL"/>  <!-- Motor Vehicles, Vans/Lorries -->
+	    </category2>
+	  </action>
+	</asset>
+
+	<asset linkend="AE-CA" order="4" amount="-25000">
+	  <preamble>
+	    But all of these things come at a cost. Cash is reduced, but only by £25,000 as she doesn't have enough to cover this.  She will need an overdraft, i.e. borrow.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FO"/>  <!-- Non-Operational, From Owners -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="4" amount="15000">
+	  <preamble>
+	    A debt is incurred to cover the amount.  This could be a bank overdraft, for example, but it is basically a loan.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+	Anne borrows £80,000 from a relative, repayable in 10 years’ time and puts it into her business bank account.
+      </statement> 
+
+      <actions>
+	<equity linkend="AE-LTL" order="1" amount="80000">
+	  <preamble>
+	    This is a Long Term Loan.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="2" amount="65000">
+	  <preamble>
+	    This loan is represented by a Cash asset from a creditor, though not for the full amount as the overdraft has to be paid off.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FC"></category3>  <!-- Non-Operational, From Creditor -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="3" amount="-15000">
+	  <preamble>
+	    The injection of the £80,000 into her bank account pays off the overdraft and leaves her with a healthy balance.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+	Anne acquires computer equipment for resale purposes from various suppliers at a cost of £60,000. She settles some suppliers by bank transfer amounting to £20,000, whereas the others will be settled in one month’s time.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="60000">
+	  <preamble>
+	    This computer equipment is inventory, ready for resale so a finished good.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/> <!-- Finished Goods -->
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="-20000">
+	  <preamble>
+	    Some of it is paid from Cash.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-EXP"></category3>  <!-- Operational Expense -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-CR" order="3" amount="-40000">
+	  <preamble>
+	    ... but the rest is paid for on credit.
+	  </preamble>
+	  <action>
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	Anne sells some of the computer equipment to various customers for £40,000. (This equipment had cost her £15,000.) £10,000 is paid to her immediately, but the remainder will be received in two weeks.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="10000">
+	  <preamble>
+	    Some cash come in from these sales, but not all.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP"> <!-- Sales -->
+	      <category3 catid="AE-CA-OP-SA"/>
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-DB" order="2" amount="30000">
+	  <preamble>
+	    The rest is owed, creating a Debtor.
+	  </preamble>
+	  <action>
+	  </action>
+	</asset>
+	<asset linkend="AE-SI" order="3" amount="-15000">
+	  <preamble>
+	    These sales comes out of finished goods inventory.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-FG"/> <!-- Inventory -->
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="4" amount="25000">
+	  <preamble>
+	    The sales result in a profit - the difference between the value of the sales and the cot of sales.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/> <!-- Sales -->
+	  </action>
+	</equity>
+
+      </actions>
+      <footnote>
+	<!-- Optional Footnote??? -->
+      </footnote>
+    </transaction>
+  </transactions>
+</accountingequation>

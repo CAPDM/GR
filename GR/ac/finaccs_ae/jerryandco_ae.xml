@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../finaccs.xsd" type="application/xml"?>
+<accountingequation>
+  <title>Jerry and Company</title>
+  
+  <!-- DO NOT ALTER THE TOP TWO LEVELS OF KEYWORDS.  IDEALLY MAKE NO CHANGES  -->
+  <keywords>
+    <category id="AE-FA">
+      <name>Fixed Assets</name>
+      <category2 id="AE-FA-LB">
+	<name>Land &amp; Buildings</name>
+	<category3 id="AE-FA-LB-LP"><name>Land/Plots</name></category3>
+	<category3 id="AE-FA-LB-BU"><name>Buildings</name></category3>
+	<category3 id="AE-FA-LB-LAB"><name>Laboratories</name></category3>
+	<category3 id="AE-FA-LB-PK"><name>Portakabins</name></category3>
+	<category3 id="AE-FA-LB-MQ"><name>Marquees</name></category3>
+	<category3 id="AE-FA-LB-CR"><name>Country Retreat</name></category3>
+	<category3 id="AE-FA-LB-CA"><name>Chairman's Apartment</name></category3>
+      </category2>
+      <category2 id="AE-FA-PE">
+	<name>Plant &amp; Equipment</name>
+	<category3 id="AE-FA-PE-PEQ"><name>Productive Equipment</name></category3>
+	<category3 id="AE-FA-PE-REF"><name>Refridgeration</name></category3>
+	<category3 id="AE-FA-PE-LE"><name>Lab Equipment</name></category3>
+	<category3 id="AE-FA-PE-CO"><name>Computers</name></category3>
+	<category3 id="AE-FA-PE-GE"><name>Generators</name></category3>
+      </category2>
+      <category2 id="AE-FA-MV">
+	<name>Motor Vehicles</name>
+	<category3 id="AE-FA-MV-CAR"><name>Cars</name></category3>
+	<category3 id="AE-FA-MV-VL"><name>Vans &amp; Lorries</name></category3>
+	<category3 id="AE-FA-MV-IT"><name>Industrial Tippers</name></category3>
+	<category3 id="AE-FA-MV-FL"><name>Forklifts</name></category3>
+	<category3 id="AE-FA-MV-CR"><name>Cranes</name></category3>
+      </category2>
+      <category2 id="AE-FA-LA">
+	<name>Leased Assets</name>
+      </category2>
+      <category2 id="AE-FA-OA">
+	<name>Other Assets</name>
+      </category2>
+    </category>
+    
+    <category id="AE-SI">
+      <name>Stock/Inventory</name>
+      <category2 id="AE-SI-RM">
+	<name>Raw Materials</name>
+      </category2>
+      <category2 id="AE-SI-WIP">
+	<name>Work in Process</name>
+      </category2>
+      <category2 id="AE-SI-FG">
+	<name>Finished Goods</name>
+      </category2>
+    </category>
+    
+    <category id="AE-OE">
+      <name>Owner's Equity</name>
+      <category2 id="AE-OE-SA">
+	<name>Sales</name>
+      </category2>
+      <category2 id="AE-OE-COGS">
+	<name>COGS</name>
+      </category2>
+      <category2 id="AE-OE-EX">
+	<name>Expenses</name>
+	<category3 id="AE-OE-EX-AD"><name>Advertising</name></category3>
+	<category3 id="AE-OE-EX-AU"><name>Audit</name></category3>
+	<category3 id="AE-OE-EX-BD"><name>Bad Debt</name></category3>
+	<category3 id="AE-OE-EX-SA"><name>Sales &amp; Admin</name></category3>
+	<category3 id="AE-OE-EX-MC"><name>Manufacturing Costs</name></category3>
+	<category3 id="AE-OE-EX-DP"><name>Depreciation</name></category3>
+	<category3 id="AE-OE-EX-PH"><name>Phones</name></category3>
+	<category3 id="AE-OE-EX-FC"><name>Finance Charges</name></category3>
+	<category3 id="AE-OE-EX-AM"><name>Amortisation</name></category3>
+	<category3 id="AE-OE-EX-SI"><name>Small Items</name></category3>
+	<category3 id="AE-OE-EX-TR"><name>Training</name></category3>
+	<category3 id="AE-OE-EX-CM"><name>Car Maintenance</name></category3>
+	<category3 id="AE-OE-EX-BM"><name>Building Maintenance</name></category3>
+      </category2>
+      <category2 id="AE-OE-TP">
+	<name>Taxes Paid</name>
+      </category2>
+      <category2 id="AE-OE-DP">
+	<name>Dividend Payment</name>
+      </category2>
+      <category2 id="AE-OE-EI">
+	<name>Extraordinary Investments</name>
+      </category2>
+      <category2 id="AE-OE-CI">
+	<name>Capital Introduced</name>
+      </category2>
+      <category2 id="AE-OE-RR">
+	<name>Revaluation Reserve</name>
+      </category2>
+      <category2 id="AE-OE-DR">
+	<name>Drawings</name>
+      </category2>
+    </category>
+    
+    <category  id="AE-DB">
+      <name>Debtors</name>
+    </category>
+    
+    <category id="AE-IA">
+      <name>Intangible Assets</name>
+      <category2 id="AE-IA-RD">
+	<name>R &amp; D</name>
+      </category2>      
+      <category2 id="AE-IA-BR">
+	<name>Brands</name>
+      </category2>      
+      <category2 id="AE-IA-OC">
+	<name>Organisational Costs</name>
+      </category2>      
+      <category2 id="AE-IA-EC">
+	<name>Experimental Costs</name>
+      </category2>      
+      <category2 id="AE-IA-PT">
+	<name>Patents</name>
+      </category2>      
+      <category2 id="AE-IA-GW">
+	<name>Goodwill</name>
+      </category2>      
+      <category2 id="AE-IA-BC">
+	<name>Brand Creation</name>
+      </category2>      
+      <category2 id="AE-IA-NC">
+	<name>Non-current</name>
+      </category2>      
+    </category>
+    
+    <category id="AE-CA">
+      <name>Cash</name>
+      <category2 id="AE-CA-OP"> 
+	<name>Operational</name> 
+	<category3 id="AE-CA-OP-SP"><name>Sale of Product</name></category3>
+	<category3 id="AE-CA-OP-SA"><name>Sale of Asset</name></category3>
+	<category3 id="AE-CA-OP-IP"><name>Inventory Purchase</name></category3>
+	<category3 id="AE-CA-OP-EXP"><name>Expenses</name></category3>
+	<category3 id="AE-CA-OP-PA"><name>Purchase of Asset</name></category3>
+	<category3 id="AE-CA-OP-PC"><name>Pay Creditors</name></category3>
+	<category3 id="AE-CA-OP-RD"><name>Receive Debts</name></category3>
+	<category3 id="AE-CA-OP-BL"><name>Bank Loan</name></category3>
+      </category2>
+      <category2 id="AE-CA-NOP"> 
+	<name>Non-Operational</name> 
+	<category3 id="AE-CA-NOP-FO"><name>From Owners</name></category3>
+	<category3 id="AE-CA-NOP-FC"><name>From Creditors</name></category3>
+	<category3 id="AE-CA-NOP-TO"><name>To Owners</name></category3>
+	<category3 id="AE-CA-NOP-TC"><name>To Creditors</name></category3>
+	<category3 id="AE-CA-NOP-OB"><name>Opening Balance</name></category3>
+      </category2>
+    </category>
+    
+    <category id="AE-SIV">
+      <name>Subsidiary Investments</name>
+    </category>
+    
+    <category id="AE-AC">
+      <name>Associate Company</name>
+    </category>
+    
+    <category id="AE-CR">
+      <name>Creditors</name>
+    </category>
+    
+    <category id="AE-LTL">
+      <name>Loans</name>
+    </category>
+  </keywords>
+
+  <!-- NOW THE VARIOUS TRANSACTIONS AND THEIR DETAIL -->
+  <transactions>
+    <preamble>
+      Jerry and Company is a new business that was created by depositing £20,000 in a bank account on 1 March. This amount was raised partly from the owner (£6,000) and partly from borrowing (£14,000). Raising funds in this way will give rise to a claim on the business by both the owner (equity) and the lender (liability). Prepare a statement of financial position of Jerry and Company following these transactions (This example is taken from Example 2.2 in Atrill &amp;McLaney, Pearson Publishing).
+     </preamble>
+    <transaction order="1">
+      <statement>
+	This is a fairly big transaction - to plug in Jerry &amp; Co's opening balance sheet as the starting point.  There are four actions to identify here.
+      </statement> 
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="6000">
+	  <preamble>
+	    £6,000 in Cash comes from the owner.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP"> <!-- Opening Balance -->
+	      <category3 catid="AE-CA-NOP-FO"/>
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="6000">
+	  <preamble>
+	    This £6,000 is balanced by the Owner's Equity - Capital Introduced.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/>  <!-- Capital Introduced -->
+	  </action>
+	</equity>
+	<asset linkend="AE-CA" order="3" amount="14000">
+	  <preamble>
+	    £14,000 is raised through borrowing, i.e. from Creditors
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP">
+	      <category3 catid="AE-CA-NOP-FC"/>  <!-- From Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="4" amount="14000">
+	  <preamble>
+	    Borrowing is a form of Loan - a Liability.
+	  </preamble>
+	</equity>
+
+      </actions>
+
+      <footnote>
+	<p>We can see from the statement of financial position that the total claims (equity
+        and liabilities) are the same as the total assets. Thus:</p>
+        <p><b>Assets = Equity + Liabilities</b></p>
+        <p>This equation – which we shall refer to as the <i>accounting
+        equation</i> – will always hold true. Whatever changes may occur to the
+        assets of the business or the claims against it, there will be compensating changes
+        elsewhere that will ensure that the statement of financial position always ‘balances’.</p>
+      </footnote>
+    </transaction>
+
+    <transaction order="2">
+      <statement>
+	    <para>March 2nd: Bought a motor van for £5,000, paying by cheque.</para>
+      </statement>
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-5000">
+	  <preamble>
+	    As we can see, the effect of buying the motor van is to decrease the balance at the bank by £5,000 ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PA" />  <!-- Purchase of Asset -->
+	    </category2>	  
+	  </action>
+	</asset>
+	<asset linkend="AE-FA" order="2" amount="5000">
+	  <preamble>
+            ... and to introduce a new asset – a motor van – to the statement of
+              financial position.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-FA-MV">
+	      <category3 catid="AE-FA-MV-VL"/>  <!-- Motor Vehicles, Vans/Lorries -->
+	    </category2>
+	  </action>
+	</asset>
+      </actions>
+
+      <footnote>
+	<para>The total assets remain unchanged. It is only the ‘mix’ of assets that has changed. The claims against the business remain the same because there has been no change in the way in which the business has been funded. </para>
+      </footnote>
+    </transaction>
+
+    <transaction order="3">
+      <statement>
+        <para>March 3rd: Bought inventories (that is, goods to be sold) on one month’s credit for £3,000. (This means that the inventories were bought on 3 March, but payment will not be made to the supplier until 3 April.)</para>
+      </statement>
+
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="3000">
+	  <preamble>
+	    Buying Inventory is converting Cash to a new form of Asset.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM">  <!-- Raw Materials  -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="2" amount="3000">
+	  <preamble>
+	    Furthermore, the fact that the goods have not yet been paid for means that the claims against the business will be increased by the £3,000 owed to the supplier, who is referred to as a <emphasis role="italic">trade payable</emphasis> (or trade creditor) on the statement of financial position.
+	  </preamble>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="4">
+      <statement>
+        <para>March 4th: Repaid £2,000 of the amount borrowed, to the lender, by cheque.</para>
+      </statement>
+
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="-2000">
+	  <preamble>
+	    The repayment of £2,000 of the borrowing will result in a decrease in the balance at the bank of £2,000 ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-PC"/>  <!-- Operational, Pay Creditors -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-LTL" order="2" amount="-2000">
+	  <preamble>
+	    ... and decreases the lender's claim against the business by the same amount, i.e. reduces the Loan (Borrowing).
+	  </preamble>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="5">
+      <statement>
+        <para>March 6th: Owner introduced another £4,000 into the business bank account.</para>
+      </statement>
+      <actions>
+	<asset linkend="AE-CA" order="1" amount="4000">
+	  <preamble>
+	    There is an introduction of more funds from the Owner.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-NOP"> <!-- Opening Balance -->
+	      <category3 catid="AE-CA-NOP-FO"/>
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="2" amount="4000">
+	  <preamble>
+	    This £4,000 is balanced by the Owner's Equity - Capital Introduced.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-CI"/>  <!-- Capital Introduced -->
+	  </action>
+	</equity>
+      </actions>
+    </transaction>
+
+    <transaction order="6">
+      <statement>
+	<para>March 7th: the business managed to sell all of the inventories for £5,000 and received a cheque immediately from the customer for this amount. The statement of financial position on 7 March, after this transaction has taken place, will be:</para>
+      </statement>
+
+      <actions>
+	<asset linkend="AE-SI" order="1" amount="-3000">
+	  <preamble>
+	    We can see that the inventories (£3,000) have now disappeared from the statement of financial position ...
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-SI-RM">  <!-- Raw Materials  -->
+	    </category2>
+	  </action>
+	</asset>
+	<asset linkend="AE-CA" order="2" amount="5000">
+	  <preamble>
+	    ...  but the cash at bank has increased by the selling price of the inventories (£5,000).
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-CA-OP">
+	      <category3 catid="AE-CA-OP-SP"/>  <!-- Operation, Sale of Product -->
+	    </category2>
+	  </action>
+	</asset>
+	<equity linkend="AE-OE" order="3" amount="2000">
+	  <preamble>
+	    This increase represents the net increase in wealth (the profit) that has arisen from trading.  The equity of the business has increased by £2,000, in line with the increase in assets.
+	  </preamble>
+	  <action>
+	    <category2 catid="AE-OE-SA"/>  <!-- Sales -->
+	  </action>
+	</equity>
+      </actions>
+
+      <footnote>
+	The net effect has therefore been to increase assets by £2,000 (that is, £5,000 less £3,000).  This increase in equity reflects the fact that wealth generated, as a result of trading or other operations, will be to the benefit of the owners and will increase their stake in the business.
+      </footnote>
+    </transaction>
+  </transactions>
+</accountingequation>

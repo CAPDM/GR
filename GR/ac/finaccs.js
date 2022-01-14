@@ -10,9 +10,11 @@
 (function(exports){
     
     "use strict";
+    
+    const AE_Q_ROWS    = 4;  // Questions per row.
 
     // Host Server
-    const AE_WWW_ROOT = ""; 
+    const AE_WWW_ROOT  = ""; 
 
     // Some numeric constants
     const MAX_CF       = 10;
@@ -404,9 +406,9 @@ enum eOE {_SA, _CO, _EX, _TP, _DP, _CI, _RR, DR};
 //console.log("  Statement = " + $(this).find('statement').text().trim());
 //console.log("  Footnote = " + $(this).find('footnote').text().trim());
 	    ts.push(new fa_transaction($(this).attr('order'), 
-				       $(this).find('statement').text().trim(), 
+				       $(this).find('statement').html(), 
 				       buildActions($(this).find('actions')),
-				       $(this).find('footnote').text().trim()));
+				       $(this).find('footnote').html()));
 	    fa_num_transactions++;  // Keep a tally
 	});
 
@@ -420,7 +422,7 @@ enum eOE {_SA, _CO, _EX, _TP, _DP, _CI, _RR, DR};
     {
 	fa_num_transactions = 0;  // Keep a count
 	fa_q.transactions = new fa_transactions($(xml).find('transactions preamble:first').text(), buildTransaction(xml));
-console.log("Transactions built: ");  console.log(fa_q.transactions);
+//console.log("Transactions built: ");  console.log(fa_q.transactions);
     }
 
     function createQuestionStructure(xml)
@@ -431,8 +433,8 @@ console.log("Transactions built: ");  console.log(fa_q.transactions);
 	fa_q.keywords = $(xml).find('keywords');  // Returns a jquery object
 //console.log("Build keywords");
 	buildKeywords(fa_q.keywords);
-console.log("Build keywords - DONE");
-console.log(fa_q.keywords);
+//console.log("Build keywords - DONE");
+//console.log(fa_q.keywords);
 	// Now build up the list of transactions
 	fa_q.transactions = $(xml).find('transactions');
 	buildTransactions(fa_q.transactions);
@@ -505,6 +507,7 @@ console.log(fa_q.keywords);
 
 		fa_qs = q;  // Update the questions list, and the screen
 		var n = "";
+
 		fa_qs.forEach(function(q, i) {
 		    n = q.replace("_ae.xml", "");
 		    // Attaching click event on new list item
@@ -513,7 +516,7 @@ console.log(fa_q.keywords);
 					   "</button>")
 			.on('click', '#fa-q-button-' + i, function(){
 			    n = $(this).attr('data-name');  // Plug the question name
-console.log("Click: " + n);
+//console.log("Click: " + n);
 			    // Go fetch that question
 			    jQuery.ajax(
 				{
@@ -523,7 +526,7 @@ console.log("Click: " + n);
 				    // headers: {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"},
 				    
 				}).done(function(q) {
-console.log("Selected question");  console.log(q);
+//console.log("Selected question");  console.log(q);
 
 				    // See if it parses.  It should as it's shold have been checked
 				    var xmlDoc;
@@ -570,7 +573,7 @@ console.log("Selected question");  console.log(q);
 		+ (i+1) + '</span>: ' + tr[i].statement + '</p></td></tr>';  // Preamble first
 	    te += '<tr><td><table width="100%">';
 	    for (var j=0; j<tr[i].actions.length; j++) {
-		te += '<tr class="fa-action-explained"><td class="fa-action" width="20%">Action</td><td class="fa-action" width="80%">';
+		te += '<tr class="fa-action-explained"><td class="fa-action" width="20%"><b>Action</b></td><td class="fa-action" width="80%">';
 		te += '<p class="fa-q-preamble">' + tr[i].actions[j][3].trim() + '</p>';
 		te += '<p class="fa-q-detail">' + tr[i].actions[j][0].trim().toUpperCase() + 
 		    ': Amount = ' + parseInt(tr[i].actions[j][IA_AMOUNT]).toLocaleString(AE_LOCALE, {style: 'currency', currency: AE_CURRENCY})  + '</p>';
@@ -583,7 +586,8 @@ console.log("Selected question");  console.log(q);
 	    }
 
 	    if (tr[i].footnote) {
-		te += '<tr><td>Footnote</td><td><p class="fa_q_footnote">' + tr[i].footnote + '</p></td></tr>';  // Any footnote
+//console.log("Footnote: ", tr[i].footnote);
+		te += '<tr class="ae-footnote"><td><b>Footnote</b></td><td><p class="fa_q_footnote">' + tr[i].footnote + '</p></td></tr>';  // Any footnote
 	    }
 	    te += '</td></tr></table>';
 	}
@@ -1070,8 +1074,8 @@ console.log("Selected question");  console.log(q);
 //console.log("BS: Updated"); console.log(bs);
     }
 
-    function BSSection(b, header, p, count)
-    // ************************************
+    function BSSection(b, header, p, count, neg=false)
+    // ***********************************************
     {
 	var runtot = parseFloat(0.0);
 
@@ -1086,7 +1090,9 @@ console.log("Selected question");  console.log(q);
 	    b.html += "<tr><td colspan='4'>" + header + "</td></tr>";
 	    for (var i=0; i<count; i++) {
 		if (parseFloat(p[i].value) != parseFloat(0)) {
-		    b.nta += parseFloat(p[i].value);
+		    b.nta += (neg) 
+			? -parseFloat(p[i].value) 
+			: parseFloat(p[i].value);
 		    runtot += parseFloat(p[i].value);
 
 		    if (parseFloat(p[i].value) < parseFloat(0.0)) {
@@ -1141,7 +1147,10 @@ console.log("Selected question");  console.log(q);
 	    
 	    // Drawings? 
 	    if (parseFloat(p[3].value) != parseFloat(0.0)) {
-		b.html += "<tr><td>" + BS_LESS + "</td><td>" + p[3].desc + "</td><td class='fa-single-under'>" + p[3].value.toLocaleString() + "</td><td></td></tr>";
+		b.html += "<tr><td><i>" + BS_LESS + "</i></td><td>" + p[3].desc 
+		    + "</td><td>" 
+		    + ((parseFloat(p[3].value) < 0) ? ("(" + Math.abs(p[3].value).toLocaleString() + ")") : p[3].value.toLocaleString() ) 
+		    + "</td><td></td></tr>";
 		b.html += "<tr><td colspan='4'>&nbsp;</td></tr>";
 		b.rep += parseFloat(p[3].value);  // Held as a negative
 	    }
@@ -1191,10 +1200,12 @@ console.log("Selected question");  console.log(q);
 	// Are there any current assets 
 	BSSection(b, BS_C_ASSET, bs.c_asset, MAX_C_ASSET);
 
-	b.html += "<tr><td></td><td colspan='3'>" + BS_LESS + "</td></tr>";
+	b.html += "<tr><td></td><td colspan='3'><i>" + BS_LESS + "</i></td></tr>";
 	b.html += "<tr><td colspan='4'>&nbsp;</td></tr>";
 	
-	BSSection(b, BS_C_LIAB, bs.c_liability, MAX_C_LIAB);  // Subtract
+//console.log('LIABILITY = ');
+//console.log(bs.c_liability);
+	BSSection(b, BS_C_LIAB, bs.c_liability, MAX_C_LIAB, true);  // Subtract?
 
 	// The net assets of the company
 	b.html += "<tr><td colspan='2'>" + BS_NETA + "</td><td></td><td class='fa-dbl-under' style='text-align: right;'>" + b.nta.toLocaleString() + "</td></tr>";
@@ -1706,7 +1717,7 @@ console.log("Selected question");  console.log(q);
 //console.log("Assets");
 //console.log($("#fa-asset-list").find("td.fa-item"));
 	    $("#fa-asset-list").find("td.fa-item").each(function() {
-		console.log($(this).data("leaf"));
+		//console.log($(this).data("leaf"));
 	    });
 //console.log("OE");
 //console.log($("#fa-equity-list").find("td.fa-item"));

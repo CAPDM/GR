@@ -193,9 +193,12 @@ tr.ae-correct {
     background-color: lightgreen !important;
 }
 
-
 tr.ae-wrong {
     background-color: lightpink !important;
+}
+
+tr.ae-footnote {
+    background-color: lightyellow !important;
 }
 
 /* ======= Keywords tree ======= */
@@ -259,13 +262,15 @@ ul, #fa-keywords-tree {
   display: block;
 }
 
-/* Buttons all the same size */
+/* Buttons all the same size in a flex grid */
 .fa-btn-group {
-  display: inline-block;  
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .fa-btn-group .fa-btn {
   display: block;
+  flex: 0 0 20%;
   margin: 10px;
   width: 100%;
 }
